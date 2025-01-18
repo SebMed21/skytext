@@ -7,4 +7,6 @@ to do:
 4. action screen +enemy action
 6. enemy and combat
 7. level up and player xp
-8. 
+
+#idk if gagawa pako item drops, since im only originally planning to create the intro for Skyrim
+#character creation is still up in the air, if im gonna add racial bonuses and abilities
