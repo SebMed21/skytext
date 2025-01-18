@@ -17,7 +17,22 @@ player_equipment = {
     'player_gloves'         : "",    
     'player_boots'          : "",
 }
+#dictionary for the current items in the player inventory
+player_inventory = {}
 
+#dictionary for items, equipment, and spells
+sword = {}
+axe = {}
+hammer = {}
+shield = {}
+helmet = {}
+body = {}
+gloves = {}
+boots = {}
+
+magic  = {}
+
+#
 #displays the current actions a user can do
 def action_screen():
     print("")
@@ -50,7 +65,6 @@ def menu_screen():
     elif user_choice == "4":
         map_screen()
         
-
 #displays the contents of the player's inventory
 def inventory_screen():
     print("*show inventory here*")
@@ -66,7 +80,6 @@ def perks_screen():
 #displays the map
 def map_screen():
     print("*shows the map*")
-    
     
 #displays current player status
 def display_status():
