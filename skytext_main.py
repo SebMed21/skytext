@@ -21,7 +21,16 @@ player_equipment = {
 #displays the current actions a user can do
 def action_screen():
     print("")
-
+    print("( |    (1) Status    |   (2) Menu    | )")
+    print("")
+    user_choice = input("Enter your choice: ")
+    
+    if user_choice == "1":
+        display_status()
+        
+    elif user_choice == "2":
+        menu_screen()
+        
 #displays the menu for inventory, skills, level up perks and map    
 def menu_screen():
     print("")
@@ -70,4 +79,5 @@ def display_status():
           "| LVL :", player_stats['player_level'])
     print("")
 
-menu_screen()
+
+action_screen()
