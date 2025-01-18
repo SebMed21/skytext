@@ -84,20 +84,20 @@ def main_menu_function():
         # user wishes to start a new game save
         if user_choice == "1":
             game_opening()
-            return False
+            break
         
         # user wishes to continue a past game save 
         elif user_choice == "2":
             print("hello")
-            return False
+            break
         
         # user wishes to quit the game
         elif user_choice == "3":
             # confirms if the user REALLY wants to quit the game 
-            user_choice = input("Are you sure you want to quit? [ 1 = YES | 2 = NO ] ")
+            user_choice = input("Are you sure you want to quit? [ 1 = Y̲E̲S̲ | 2 = N̲O̲ ] ")
             
             if user_choice == "1":
-                return False
+                break
                 
             elif user_choice == "2":
                 continue
@@ -132,22 +132,22 @@ def menu_screen():
         
         if user_choice == "1":
             inventory_screen()
-            return False
+            break
         
         elif user_choice == "2":
             magic_screen()
-            return False
+            break
             
         elif user_choice == "3":
             perks_screen()
-            return False
+            break
             
         elif user_choice == "4":
             map_screen()
-            return False
+            break
 
         elif user_choice == "5":
-            return False
+            break
         
 # displays the contents of the player's inventory
 def inventory_screen():
@@ -180,7 +180,8 @@ def display_status():
 #      GAMEPLAY FUNCTIONS!!!!!!!!!!!!!!!!!
 
 def game_opening():
-    count = 10
+    # "." dot delay
+    count = 15
     while count > 0:
         print(".")
         count = count - 1
@@ -188,12 +189,23 @@ def game_opening():
     
     print("\n", separator, "\n")
     
+    # opening text
     string = "             Scrolls have foretold, of black wings in the cold, that when brothers wage war come unfurled!\n                 Alduin, bane of kings, ancient shadow unbound, With a hunger to swallow the world!\n" 
+    # text output delay
     for i in string:
         sys.stdout.write(i)
         sys.stdout.flush()
         time.sleep(0.03)
     
+    # format
+    count = 5
+    while count > 0:
+        print("")
+        count = count - 1
+        time.sleep(0.1)  
+    
+    # "Alduin" art with out delay
+    print("")
     time.sleep(0.1)
     print("                          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣤⣤⣤⣤⡼⠀⢀⡀⣀⢱⡄⡀⠀⠀⠀⢲⣤⣤⣤⣤⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
     time.sleep(0.1)
@@ -227,7 +239,87 @@ def game_opening():
     time.sleep(0.1)
     print("                          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⣿⣼⣀⣠⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")   
     time.sleep(0.1)
+    
+    # format
+    count = 5
+    while count > 0:
+        print("")
+        count = count - 1
+        time.sleep(0.1)  
+    
     print("\n", separator, "\n")
     
+    # next scene 
+    opening_scene()
+
+def opening_scene():
+    #count = 15
+    #while count > 0:
+       # print(".")
+        #count = count - 1
+       # time.sleep(0.1)
+        
+    print("\n", separator, "\n")    
+    
+    print("\n                                                 ★ U N B O U N D \n\n\n")
+    
+    dialogue =  "-> You open your eyes and wake up. You look around and see that you're on a wobbly carriage.\n" \
+                "-> You try to move but your arms are bound.\n"\
+                "-> You then hear a voice that calls you out.\n"\
+                "-> You see a blond man with hands bound, wearing what seems to be light armor with blue markings and an emblem of a bear..\n \n"\
+                " > Stormcloak Soldier : Hey you. You're finally awake.\n"\
+                " > Stormcloak Soldier : You we're trying to cross the border, right?\n"\
+                " > Stormcloak Soldier : Walked right into that imperial ambush, same as us, and that thief over there.\n\n"\
+                "-> You look around the carriage, and see another man, he is wearing ragged clothes with his hands tied.\n"\
+                "-> The man in ragged clothes then talks\n \n"\
+                " > Horse Thief : Damn you Stormcloaks. \n"\
+                " > Horse Thief : Skyrim was fine until you came along. Empire was nice and lazy.\n"\
+                " > Horse Thief : If they hadn't been looking for you, I could've stolen that horse and been halfway to Hammerfell.\n"\
+                " > Horse Thief : You there.\n\n"\
+                "-> The man in the ragged robes looks at you.\n\n"\
+                " > Horse Thief : You and me, we shouldn't be here. It's these Stormcloaks the Empire wants.\n"\
+                " > Stormcloak Soldier : We're all brothers and sisters in binds now, thief.\n \n"\
+                " > Imperial Soldier : Shut up back there!\n\n"\
+                " > Thief : And what's wrong with him, huh?\n"\
+                " > Stormcloak Soldier : Watch your tongue! You're speaking to Ulfric Stormcloak, the true High King.\n\n"\
+                "-> You look beside you and see a man wearing a black tunic. His hands are bound and his mouth is gagged.\n\n"\
+                " > Thief : Ulfric? The Jarl of Windhelm? You're the leader of the rebellion.\n"\
+                " > Thief : But if they've captured you... Oh gods, where are they taking us!?\n"\
+                " > Stormcloak Soldier : I don't know where we're going, but Sovngarde awaits. \n"\
+                " > Thief : No, this can't be happening. This isn't happening!\n\n"\
+                "-> You see grey stone walls appear on the distance.\n"\
+                "-> Tall towers loom behind the stretch of walls and a gate is visible breaking up the length of stone.\n\n"\
+                " > Stormcloak Soldier : Hey, what village are you from, horse thief?\n"\
+                " > Horse Thief : Why do you care?\n"\
+                " > Stormcloak soldier : A nord's last thoughts should be of home.\n"\
+                " > Horse Thief : Rorikstead. I'm... I'm from Rorikstead.\n\n"\
+                "-> You see the walls get closer and closer until you are almost beneath it's feet...\n\n"
+                   
+    for i in dialogue:
+        sys.stdout.write(i)
+        sys.stdout.flush()
+        time.sleep(0.0001)
+        
+    print("\n", separator, "\n")        
+    
+    # asks for user input to continue the story
+    while True: 
+        user_input = input("                                    CONTINUE? [ P̲R̲E̲S̲S̲ 1 T̲O̲ C̲O̲N̲T̲I̲N̲U̲E̲ ] ")
+    
+        if user_input == "1":
+            break
+        
+    print("\n", separator, "\n")
+        
+    dialogue =  ""
+
+    
 # program launch into main menu
-game_opening()
+
+opening_scene()
+
+
+#main_menu_visual()
+#main_menu_function()
+
+#action_screen()
