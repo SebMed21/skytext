@@ -5,8 +5,7 @@ player_stats = {
     'player_magicka'        : 100,
     'player_stamina'        : 100,  
     'player_exp'            : 0,
-    'player_level'          : 1, 
-    
+    'player_level'          : 1,    
 }
 
 player_equipment = {
@@ -16,5 +15,4 @@ player_equipment = {
     'player_body'           : "",
     'player_gloves'         : "",    
     'player_boots'          : "",
-    
 }
