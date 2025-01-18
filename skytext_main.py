@@ -33,9 +33,11 @@ boots = {}
 magic  = {}
 
 #initialization for text and other utils
-separator = "=========================================================================================="
+separator = "================================================================================================================="
     #print("\n", separator, "\n")
-    
+    #user_choice = input("Enter your choice: ")
+
+#displays the opening main menu for the game 
 def main_menu_visual():
     print("\n", separator, "\n")
     print("            @    @            ")
@@ -44,32 +46,42 @@ def main_menu_visual():
     print("         @@       @@@         ")
     print("        @@@  @     @@@        ")
     print("       @@@   @@ @@  @@@       ")
-    print("      @@@@  @@@@@   @@@@      ")
-    print("     @@@@   @@   @@ @@@@      ")
-    print("    @@@@@        @@  @@@@@    ")
-    print("   @@@@@@@   @@@@@  @@@@@@    ")
-    print("   @@@@@ @  @@@    @  @@@@@   ")
-    print("  @@@@@     @@@        @@@@@  ")
-    print(" @@@@@@   @@@@@@@@@@   @@@@@@ ")
-    print("  @@@@@@@@@@@@@@@@@@@@@@@@@@  ")
-    print("   @@@@@@@@@@@@@@@@@@@@@@@@   ")
+    print("      @@@@  @@@@@    @@@      ", "┌─────────────────────────────────────────────────────────────────────────────┐")
+    print("     @@@@   @@   @@  @@@@     ", "│  ______   ___  ____  ____  ____  _________  ________  ____  ____  _________ │")
+    print("    @@@@@        @@   @@@@    ", "│.' ____ \ |_  ||_  _||_  _||_  _||  _   _  ||_   __  ||_  _||_  _||  _   _  |│")
+    print("   @@@@@@@   @@@@@   @@@@@@   ", "│| (___ \_|  | |_/ /    \ \  / /  |_/ | | \_|  | |_ \_|  \ \  / /  |_/ | | \_|│")
+    print("   @@@@@ @  @@@     @  @@@@@  ", "│ _.____`.   |  __'.     \ \/ /       | |      |  _| _    > `' <       | |    │")
+    print("  @@@@@     @@@         @@@@@ ", "│| \____) | _| |  \ \_   _|  |_      _| |_    _| |__/ | _/ /'`\ \_    _| |_   │")
+    print(" @@@@@@   @@@@@@@@@@   @@@@@@ ", "│ \______.'|____||____| |______|    |_____|  |________||____||____|  |_____|  │")
+    print("  @@@@@@@@@@@@@@@@@@@@@@@@@@  ", "└─────────────────────────────────────────────────────────────────────────────┘")
+    print("   @@@@@@@@@@@@@@@@@@@@@@@@   ", "   Turn-based RPG based on the game by Bethesda : The Elder Scrolls V: Skyrim  ")
     print("    @@@@@ @@@@@@@@@@ @@@@@    ")
-    print("     @@@@   @@@@@@    @@@@    ")
+    print("     @@@@   @@@@@@    @@@     ")
     print("      @@@     @@@    @@@      ")
     print("       @@@@@    @@  @@@       ")
     print("        @@@@    @@ @@@        ")
     print("         @@@   @@  @@         ")
-    print("          @@  @@   @          ", "   [1] NEW GAME ")
-    print("           @  @@   @          ", "   [2] CONTINUE GAME ")
-    print("             @@               ", "   [3] EXIT ")
+    print("          @@  @@   @          ", "                                                        [1] NEW GAME           ")
+    print("           @  @@   @          ", "                                                        [2] CONTINUE GAME      ")
+    print("             @@               ", "                                                        [3] EXIT               ")
     print("            @@   @            ")
     print("             @@ @             ")
     print("              @@              ")
     print("              @               ")
     
     print("\n", separator, "\n")
-
 def main_menu_function():
+
+    user_choice = input("Enter your choice: ") 
+    
+    if user_choice == "1":
+        print("hi")
+        
+    if user_choice == "2":
+        print("hello")
+        
+    if user_choice == "3":
+        exit
     
 #displays the current actions a user can do
 def action_screen():
@@ -145,5 +157,5 @@ def display_status():
           "| LVL :", player_stats['player_level'])
     print("\n", separator, "\n")
 
-
-skytext_main_menu()
+main_menu_visual()
+main_menu_function()
