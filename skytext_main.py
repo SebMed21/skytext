@@ -31,39 +31,53 @@ gloves = {}
 boots = {}
 
 magic  = {}
-
 #
 #displays the current actions a user can do
 def action_screen():
-    print("")
-    print("( |    (1) Status    |   (2) Menu    | )")
-    print("")
-    user_choice = input("Enter your choice: ")
+    while True:
+        print("")
+        print("( |    (1) S̲T̲A̲T̲U̲S̲    |   (2) M̲E̲N̲U̲    |   (3) E̲X̲I̲T̲ M̲E̲N̲U̲   | )")
+        print("")
+        user_choice = input("Enter your choice: ")
+        
+        if user_choice == "1":
+            display_status()
+            return False
+            
+        elif user_choice == "2":
+            menu_screen()  
+            return False
+        
+        elif user_choice == "3":
+            return False
     
-    if user_choice == "1":
-        display_status()
-        
-    elif user_choice == "2":
-        menu_screen()
-        
+     
 #displays the menu for inventory, skills, level up perks and map    
 def menu_screen():
-    print("")
-    print("( |    (1) Inventory    |   (2) Magic   |   (3) Perks   |   (4) Map     | )")
-    print("")
-    user_choice = input("Enter your choice: ")
-    
-    if user_choice == "1":
-        inventory_screen()
-    
-    elif user_choice == "2":
-        magic_screen()
+    while True:
+        print("")
+        print("( |    (1) I̲N̲V̲E̲N̲T̲O̲R̲Y̲    |   (2) M̲A̲G̲I̲C̲   |   (3) P̲E̲R̲K̲S̲   |   (4) M̲A̲P̲     |    (5) E̲X̲I̲T̲ M̲E̲N̲U̲   | )")
+        print("")
+        user_choice = input("Enter your choice: ")
         
-    elif user_choice == "3":
-        perks_screen()
+        if user_choice == "1":
+            inventory_screen()
+            return False
         
-    elif user_choice == "4":
-        map_screen()
+        elif user_choice == "2":
+            magic_screen()
+            return False
+            
+        elif user_choice == "3":
+            perks_screen()
+            return False
+            
+        elif user_choice == "4":
+            map_screen()
+            return False
+
+        elif user_choice == "5":
+            return False
         
 #displays the contents of the player's inventory
 def inventory_screen():
