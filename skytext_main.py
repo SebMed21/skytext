@@ -1,5 +1,5 @@
 player_stats = {
-    'player_name' : "Prisoner",
+    'player_name'           : "Prisoner",
     #player values           
     'player_health'         : 100,
     'player_magicka'        : 100,
@@ -16,3 +16,12 @@ player_equipment = {
     'player_gloves'         : "",    
     'player_boots'          : "",
 }
+
+def display_status():
+    print(player_stats['player_name'])
+    print("")
+    print("HP:", player_stats['player_health'])
+    print("MP:", player_stats['player_magicka'])
+    print("STA:", player_stats['player_stamina'])
+    
+display_status()
