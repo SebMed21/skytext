@@ -35,7 +35,42 @@ magic  = {}
 #initialization for text and other utils
 separator = "=========================================================================================="
     #print("\n", separator, "\n")
+    
+def main_menu_visual():
+    print("\n", separator, "\n")
+    print("            @    @            ")
+    print("           @@    @@           ")
+    print("          @@@    @@@          ")
+    print("         @@       @@@         ")
+    print("        @@@  @     @@@        ")
+    print("       @@@   @@ @@  @@@       ")
+    print("      @@@@  @@@@@   @@@@      ")
+    print("     @@@@   @@   @@ @@@@      ")
+    print("    @@@@@        @@  @@@@@    ")
+    print("   @@@@@@@   @@@@@  @@@@@@    ")
+    print("   @@@@@ @  @@@    @  @@@@@   ")
+    print("  @@@@@     @@@        @@@@@  ")
+    print(" @@@@@@   @@@@@@@@@@   @@@@@@ ")
+    print("  @@@@@@@@@@@@@@@@@@@@@@@@@@  ")
+    print("   @@@@@@@@@@@@@@@@@@@@@@@@   ")
+    print("    @@@@@ @@@@@@@@@@ @@@@@    ")
+    print("     @@@@   @@@@@@    @@@@    ")
+    print("      @@@     @@@    @@@      ")
+    print("       @@@@@    @@  @@@       ")
+    print("        @@@@    @@ @@@        ")
+    print("         @@@   @@  @@         ")
+    print("          @@  @@   @          ", "   [1] NEW GAME ")
+    print("           @  @@   @          ", "   [2] CONTINUE GAME ")
+    print("             @@               ", "   [3] EXIT ")
+    print("            @@   @            ")
+    print("             @@ @             ")
+    print("              @@              ")
+    print("              @               ")
+    
+    print("\n", separator, "\n")
 
+def main_menu_function():
+    
 #displays the current actions a user can do
 def action_screen():
     while True:
@@ -111,4 +146,4 @@ def display_status():
     print("\n", separator, "\n")
 
 
-action_screen()
+skytext_main_menu()
