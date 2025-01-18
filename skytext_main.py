@@ -31,13 +31,18 @@ gloves = {}
 boots = {}
 
 magic  = {}
-#
+
+#initialization for text and other utils
+separator = "=========================================================================================="
+    #print("\n", separator, "\n")
+
 #displays the current actions a user can do
 def action_screen():
     while True:
-        print("")
+        print("\n", separator, "\n")
         print("( |    (1) S̲T̲A̲T̲U̲S̲    |   (2) M̲E̲N̲U̲    |   (3) E̲X̲I̲T̲ M̲E̲N̲U̲   | )")
-        print("")
+        print("\n", separator, "\n")
+        
         user_choice = input("Enter your choice: ")
         
         if user_choice == "1":
@@ -51,13 +56,12 @@ def action_screen():
         elif user_choice == "3":
             return False
     
-     
 #displays the menu for inventory, skills, level up perks and map    
 def menu_screen():
     while True:
-        print("")
+        print("\n", separator, "\n")
         print("( |    (1) I̲N̲V̲E̲N̲T̲O̲R̲Y̲    |   (2) M̲A̲G̲I̲C̲   |   (3) P̲E̲R̲K̲S̲   |   (4) M̲A̲P̲     |    (5) E̲X̲I̲T̲ M̲E̲N̲U̲   | )")
-        print("")
+        print("\n", separator, "\n")
         user_choice = input("Enter your choice: ")
         
         if user_choice == "1":
@@ -97,14 +101,14 @@ def map_screen():
     
 #displays current player status
 def display_status():
-    print("")
+    print("\n", separator, "\n")
     print(player_stats['player_name'])
     print("HP:", player_stats['player_health'], 
           "| MP:", player_stats['player_magicka'], 
           "| STA:", player_stats['player_stamina'])
     print("EXP: ", player_stats['player_experience'],
           "| LVL :", player_stats['player_level'])
-    print("")
+    print("\n", separator, "\n")
 
 
 action_screen()
