@@ -1,14 +1,14 @@
-#dictionary for player status
+# dictionary for player status
 player_stats = {
     'player_name'           : "Prisoner",
     #player values           
-    'player_health'         : 100,
-    'player_magicka'        : 100,
-    'player_stamina'        : 100,  
+    'player_health'         : 0,
+    'player_magicka'        : 0,
+    'player_stamina'        : 0,  
     'player_experience'     : 0,
     'player_level'          : 1,    
 }
-#dictionary for player's equipped gear
+# dictionary for player's equipped gear
 player_equipment = {
     'player_right_hand'     : "",
     'player_left_hand'      : "",
@@ -17,10 +17,10 @@ player_equipment = {
     'player_gloves'         : "",    
     'player_boots'          : "",
 }
-#dictionary for the current items in the player inventory
+# dictionary for the current items in the player inventory
 player_inventory = {}
 
-#dictionary for items, equipment, and spells
+# dictionary for items, equipment, and spells
 sword = {}
 axe = {}
 hammer = {}
@@ -32,12 +32,12 @@ boots = {}
 
 magic  = {}
 
-#initialization for text and other utils
+# initialization for text and other utils
 separator = "================================================================================================================="
-    #print("\n", separator, "\n")
-    #user_choice = input("Enter your choice: ")
+    # print("\n", separator, "\n")
+    # user_choice = input("Enter your choice: ")
 
-#displays the opening main menu for the game 
+# displays the opening main menu for the game 
 def main_menu_visual():
     print("\n", separator, "\n")
     print("            @    @            ")
@@ -70,24 +70,37 @@ def main_menu_visual():
     print("              @               ")
     
     print("\n", separator, "\n")
+# functionality of the main menu to start the game or access the other menus
 def main_menu_function():
-
-    user_choice = input("Enter your choice: ") 
-    
-    if user_choice == "1":
-        print("hi")
+    while True:
+        user_choice = input("Enter your choice: ") 
         
-    if user_choice == "2":
-        print("hello")
+        # user wishes to start a new game save
+        if user_choice == "1":
+            game_opening()
+            return False
         
-    if user_choice == "3":
-        exit
-    
-#displays the current actions a user can do
+        # user wishes to continue a past game save 
+        elif user_choice == "2":
+            print("hello")
+            return False
+        
+        # user wishes to quit the game
+        elif user_choice == "3":
+            # confirms if the user REALLY wants to quit the game 
+            user_choice = input("Are you sure you want to quit? [ 1 = YES | 2 = NO ] ")
+            
+            if user_choice == "1":
+                return False
+                
+            elif user_choice == "2":
+                continue
+                   
+# displays the current actions a user can do
 def action_screen():
     while True:
         print("\n", separator, "\n")
-        print("( |    (1) S̲T̲A̲T̲U̲S̲    |   (2) M̲E̲N̲U̲    |   (3) E̲X̲I̲T̲ M̲E̲N̲U̲   | )")
+        print("                        ( |    (1) S̲T̲A̲T̲U̲S̲    |   (2) M̲E̲N̲U̲    |   (3) E̲X̲I̲T̲ M̲E̲N̲U̲   | )")
         print("\n", separator, "\n")
         
         user_choice = input("Enter your choice: ")
@@ -103,11 +116,11 @@ def action_screen():
         elif user_choice == "3":
             return False
     
-#displays the menu for inventory, skills, level up perks and map    
+# displays the menu for inventory, skills, level up perks and map    
 def menu_screen():
     while True:
         print("\n", separator, "\n")
-        print("( |    (1) I̲N̲V̲E̲N̲T̲O̲R̲Y̲    |   (2) M̲A̲G̲I̲C̲   |   (3) P̲E̲R̲K̲S̲   |   (4) M̲A̲P̲     |    (5) E̲X̲I̲T̲ M̲E̲N̲U̲   | )")
+        print("         ( |    (1) I̲N̲V̲E̲N̲T̲O̲R̲Y̲    |   (2) M̲A̲G̲I̲C̲   |   (3) P̲E̲R̲K̲S̲   |   (4) M̲A̲P̲     |    (5) E̲X̲I̲T̲ M̲E̲N̲U̲   | )")
         print("\n", separator, "\n")
         user_choice = input("Enter your choice: ")
         
@@ -130,23 +143,23 @@ def menu_screen():
         elif user_choice == "5":
             return False
         
-#displays the contents of the player's inventory
+# displays the contents of the player's inventory
 def inventory_screen():
     print("*show inventory here*")
     
-#displays the magic spells the player can currently use
+# displays the magic spells the player can currently use
 def magic_screen():
     print("*show magic here*")
 
-#displays the perks the player can take (character upgrades)
+# displays the perks the player can take (character upgrades)
 def perks_screen():
     print("*show perks here*")
     
-#displays the map
+# displays the map
 def map_screen():
     print("*shows the map*")
     
-#displays current player status
+# displays current player status
 def display_status():
     print("\n", separator, "\n")
     print(player_stats['player_name'])
@@ -157,5 +170,32 @@ def display_status():
           "| LVL :", player_stats['player_level'])
     print("\n", separator, "\n")
 
+
+#      GAMEPLAY FUNCTIONS!!!!!!!!!!!!!!!!!
+
+def game_opening():
+
+    print("\n", separator, "\n")
+    print("         Scrolls have foretold, of black wings in the cold, that when brothers wage war come unfurled!")  
+    print("             Alduin, bane of kings, ancient shadow unbound, With a hunger to swallow the world!\n")
+    print("                          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣤⣤⣤⣤⡼⠀⢀⡀⣀⢱⡄⡀⠀⠀⠀⢲⣤⣤⣤⣤⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
+    print("                          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣴⣾⣿⣿⣿⣿⣿⡿⠛⠋⠁⣤⣿⣿⣿⣧⣷⠀⠀⠘⠉⠛⢻⣷⣿⣽⣿⣿⣷⣦⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀")
+    print("                          ⠀⠀⠀⠀⠀⠀⢀⣴⣞⣽⣿⣿⣿⣿⣿⣿⣿⠁⠀⠀⠠⣿⣿⡟⢻⣿⣿⣇⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣟⢦⡀⠀⠀⠀⠀⠀⠀")
+    print("                          ⠀⠀⠀⠀⠀⣠⣿⡾⣿⣿⣿⣿⣿⠿⣻⣿⣿⡀⠀⠀⠀⢻⣿⣷⡀⠻⣧⣿⠆⠀⠀⠀⠀⣿⣿⣿⡻⣿⣿⣿⣿⣿⠿⣽⣦⡀⠀⠀⠀⠀")
+    print("                          ⠀⠀⠀⠀⣼⠟⣩⣾⣿⣿⣿⢟⣵⣾⣿⣿⣿⣧⠀⠀⠀⠈⠿⣿⣿⣷⣈⠁⠀⠀⠀⠀⣰⣿⣿⣿⣿⣮⣟⢯⣿⣿⣷⣬⡻⣷⡄⠀⠀⠀")
+    print("                          ⠀⠀⢀⡜⣡⣾⣿⢿⣿⣿⣿⣿⣿⢟⣵⣿⣿⣿⣷⣄⠀⣰⣿⣿⣿⣿⣿⣷⣄⠀⢀⣼⣿⣿⣿⣷⡹⣿⣿⣿⣿⣿⣿⢿⣿⣮⡳⡄⠀⠀")
+    print("                         ⠀⢠⢟⣿⡿⠋⣠⣾⢿⣿⣿⠟⢃⣾⢟⣿⢿⣿⣿⣿⣾⡿⠟⠻⣿⣻⣿⣏⠻⣿⣾⣿⣿⣿⣿⡛⣿⡌⠻⣿⣿⡿⣿⣦⡙⢿⣿⡝⣆⠀")
+    print("                          ⠀⢯⣿⠏⣠⠞⠋⠀⣠⡿⠋⢀⣿⠁⢸⡏⣿⠿⣿⣿⠃⢠⣴⣾⣿⣿⣿⡟⠀⠘⢹⣿⠟⣿⣾⣷⠈⣿⡄⠘⢿⣦⠀⠈⠻⣆⠙⣿⣜⠆")
+    print("                          ⢀⣿⠃⡴⠃⢀⡠⠞⠋⠀⠀⠼⠋⠀⠸⡇⠻⠀⠈⠃⠀⣧⢋⣼⣿⣿⣿⣷⣆⠀⠈⠁⠀⠟⠁⡟⠀⠈⠻⠀⠀⠉⠳⢦⡀⠈⢣⠈⢿⡄")
+    print("                          ⣸⠇⢠⣷⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠻⠿⠿⠋⠀⢻⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⢾⣆⠈⣷")
+    print("                          ⡟⠀⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣶⣤⡀⢸⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⡄⢹")
+    print("                          ⡇⠀⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀⠈⣿⣼⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠃⢸")
+    print("                          ⢡⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⠶⣶⡟⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡼")
+    print("                          ⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡾⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁")
+    print("                          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡁⢠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
+    print("                          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⣿⣼⣀⣠⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")   
+    print("\n", separator, "\n")
+
+# program launch into main menu
 main_menu_visual()
 main_menu_function()
