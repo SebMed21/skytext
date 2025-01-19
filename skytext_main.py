@@ -39,6 +39,8 @@ magic  = {}
 separator = "================================================================================================================="
     # print("\n", separator, "\n")
     # user_choice = input("Enter your choice: ")
+    
+read_speed = 0.02
 
 # displays the opening main menu for the game 
 def main_menu_visual():
@@ -101,6 +103,11 @@ def main_menu_function():
                 
             elif user_choice == "2":
                 continue
+                   
+def character_creation_menu():
+    print("*SHOW CHARACTER CREATION SCREEN HERE*")     
+    
+    print("\n", separator, "\n")               
                    
 # displays the current actions a user can do
 def action_screen():
@@ -177,7 +184,7 @@ def display_status():
     print("\n", separator, "\n")
 
 
-#      GAMEPLAY FUNCTIONS!!!!!!!!!!!!!!!!!
+# !!!functions for gameplay!!!
 
 def game_opening():
     # "." dot delay
@@ -195,7 +202,7 @@ def game_opening():
     for i in string:
         sys.stdout.write(i)
         sys.stdout.flush()
-        time.sleep(0.03)
+        time.sleep(0.02)
     
     # format
     count = 5
@@ -204,41 +211,41 @@ def game_opening():
         count = count - 1
         time.sleep(0.1)  
     
-    # "Alduin" art with out delay
+    # "Alduin" art with print delay
     print("")
-    time.sleep(0.1)
-    print("                          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣤⣤⣤⣤⡼⠀⢀⡀⣀⢱⡄⡀⠀⠀⠀⢲⣤⣤⣤⣤⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
-    time.sleep(0.1)
-    print("                          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣴⣾⣿⣿⣿⣿⣿⡿⠛⠋⠁⣤⣿⣿⣿⣧⣷⠀⠀⠘⠉⠛⢻⣷⣿⣽⣿⣿⣷⣦⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀")
-    time.sleep(0.1)
-    print("                          ⠀⠀⠀⠀⠀⠀⢀⣴⣞⣽⣿⣿⣿⣿⣿⣿⣿⠁⠀⠀⠠⣿⣿⡟⢻⣿⣿⣇⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣟⢦⡀⠀⠀⠀⠀⠀⠀")
-    time.sleep(0.1)
-    print("                          ⠀⠀⠀⠀⠀⣠⣿⡾⣿⣿⣿⣿⣿⠿⣻⣿⣿⡀⠀⠀⠀⢻⣿⣷⡀⠻⣧⣿⠆⠀⠀⠀⠀⣿⣿⣿⡻⣿⣿⣿⣿⣿⠿⣽⣦⡀⠀⠀⠀⠀")
-    time.sleep(0.1)
-    print("                          ⠀⠀⠀⠀⣼⠟⣩⣾⣿⣿⣿⢟⣵⣾⣿⣿⣿⣧⠀⠀⠀⠈⠿⣿⣿⣷⣈⠁⠀⠀⠀⠀⣰⣿⣿⣿⣿⣮⣟⢯⣿⣿⣷⣬⡻⣷⡄⠀⠀⠀")
-    time.sleep(0.1)
-    print("                          ⠀⠀⢀⡜⣡⣾⣿⢿⣿⣿⣿⣿⣿⢟⣵⣿⣿⣿⣷⣄⠀⣰⣿⣿⣿⣿⣿⣷⣄⠀⢀⣼⣿⣿⣿⣷⡹⣿⣿⣿⣿⣿⣿⢿⣿⣮⡳⡄⠀⠀")
-    time.sleep(0.1)
-    print("                         ⠀⢠⢟⣿⡿⠋⣠⣾⢿⣿⣿⠟⢃⣾⢟⣿⢿⣿⣿⣿⣾⡿⠟⠻⣿⣻⣿⣏⠻⣿⣾⣿⣿⣿⣿⡛⣿⡌⠻⣿⣿⡿⣿⣦⡙⢿⣿⡝⣆⠀")
-    time.sleep(0.1)
-    print("                          ⠀⢯⣿⠏⣠⠞⠋⠀⣠⡿⠋⢀⣿⠁⢸⡏⣿⠿⣿⣿⠃⢠⣴⣾⣿⣿⣿⡟⠀⠘⢹⣿⠟⣿⣾⣷⠈⣿⡄⠘⢿⣦⠀⠈⠻⣆⠙⣿⣜⠆")
-    time.sleep(0.1)
-    print("                          ⢀⣿⠃⡴⠃⢀⡠⠞⠋⠀⠀⠼⠋⠀⠸⡇⠻⠀⠈⠃⠀⣧⢋⣼⣿⣿⣿⣷⣆⠀⠈⠁⠀⠟⠁⡟⠀⠈⠻⠀⠀⠉⠳⢦⡀⠈⢣⠈⢿⡄")
-    time.sleep(0.1)
-    print("                          ⣸⠇⢠⣷⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠻⠿⠿⠋⠀⢻⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⢾⣆⠈⣷")
-    time.sleep(0.1)
-    print("                          ⡟⠀⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣶⣤⡀⢸⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⡄⢹")
-    time.sleep(0.1)
-    print("                          ⡇⠀⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀⠈⣿⣼⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠃⢸")
-    time.sleep(0.1)
-    print("                          ⢡⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⠶⣶⡟⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡼")
-    time.sleep(0.1)
-    print("                          ⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡾⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁")
-    time.sleep(0.1)
-    print("                          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡁⢠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
-    time.sleep(0.1)
-    print("                          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⣿⣼⣀⣠⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")   
-    time.sleep(0.1)
+    time.sleep(0.2)
+    print("                               ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣤⣤⣤⣤⡼⠀⢀⡀⣀⢱⡄⡀⠀⠀⠀⢲⣤⣤⣤⣤⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
+    time.sleep(0.2)
+    print("                               ⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣴⣾⣿⣿⣿⣿⣿⡿⠛⠋⠁⣤⣿⣿⣿⣧⣷⠀⠀⠘⠉⠛⢻⣷⣿⣽⣿⣿⣷⣦⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀")
+    time.sleep(0.2)
+    print("                               ⠀⠀⠀⠀⠀⠀⢀⣴⣞⣽⣿⣿⣿⣿⣿⣿⣿⠁⠀⠀⠠⣿⣿⡟⢻⣿⣿⣇⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣟⢦⡀⠀⠀⠀⠀⠀⠀")
+    time.sleep(0.2)
+    print("                               ⠀⠀⠀⠀⠀⣠⣿⡾⣿⣿⣿⣿⣿⠿⣻⣿⣿⡀⠀⠀⠀⢻⣿⣷⡀⠻⣧⣿⠆⠀⠀⠀⠀⣿⣿⣿⡻⣿⣿⣿⣿⣿⠿⣽⣦⡀⠀⠀⠀⠀")
+    time.sleep(0.2)
+    print("                               ⠀⠀⠀⠀⣼⠟⣩⣾⣿⣿⣿⢟⣵⣾⣿⣿⣿⣧⠀⠀⠀⠈⠿⣿⣿⣷⣈⠁⠀⠀⠀⠀⣰⣿⣿⣿⣿⣮⣟⢯⣿⣿⣷⣬⡻⣷⡄⠀⠀⠀")
+    time.sleep(0.2)
+    print("                               ⠀⠀⢀⡜⣡⣾⣿⢿⣿⣿⣿⣿⣿⢟⣵⣿⣿⣿⣷⣄⠀⣰⣿⣿⣿⣿⣿⣷⣄⠀⢀⣼⣿⣿⣿⣷⡹⣿⣿⣿⣿⣿⣿⢿⣿⣮⡳⡄⠀⠀")
+    time.sleep(0.2)
+    print("                              ⠀⢠⢟⣿⡿⠋⣠⣾⢿⣿⣿⠟⢃⣾⢟⣿⢿⣿⣿⣿⣾⡿⠟⠻⣿⣻⣿⣏⠻⣿⣾⣿⣿⣿⣿⡛⣿⡌⠻⣿⣿⡿⣿⣦⡙⢿⣿⡝⣆⠀")
+    time.sleep(0.2)
+    print("                               ⠀⢯⣿⠏⣠⠞⠋⠀⣠⡿⠋⢀⣿⠁⢸⡏⣿⠿⣿⣿⠃⢠⣴⣾⣿⣿⣿⡟⠀⠘⢹⣿⠟⣿⣾⣷⠈⣿⡄⠘⢿⣦⠀⠈⠻⣆⠙⣿⣜⠆")
+    time.sleep(0.2)
+    print("                               ⢀⣿⠃⡴⠃⢀⡠⠞⠋⠀⠀⠼⠋⠀⠸⡇⠻⠀⠈⠃⠀⣧⢋⣼⣿⣿⣿⣷⣆⠀⠈⠁⠀⠟⠁⡟⠀⠈⠻⠀⠀⠉⠳⢦⡀⠈⢣⠈⢿⡄")
+    time.sleep(0.2)
+    print("                               ⣸⠇⢠⣷⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠻⠿⠿⠋⠀⢻⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⢾⣆⠈⣷")
+    time.sleep(0.2)
+    print("                               ⡟⠀⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣶⣤⡀⢸⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⡄⢹")
+    time.sleep(0.2)
+    print("                               ⡇⠀⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀⠈⣿⣼⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠃⢸")
+    time.sleep(0.2)
+    print("                               ⢡⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⠶⣶⡟⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡼")
+    time.sleep(0.2)
+    print("                               ⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡾⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁")
+    time.sleep(0.2)
+    print("                               ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡁⢠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
+    time.sleep(0.2)
+    print("                               ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⣿⣼⣀⣠⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")   
+    time.sleep(0.2)
     
     # format
     count = 5
@@ -249,19 +256,29 @@ def game_opening():
     
     print("\n", separator, "\n")
     
+    # asks for user input to continue the story
+    while True: 
+        user_input = input("                                    CONTINUE? [ P̲R̲E̲S̲S̲ 1 T̲O̲ C̲O̲N̲T̲I̲N̲U̲E̲ ] ")
+    
+        if user_input == "1":
+            break
+        
+    print("\n", separator, "\n")
+
+    
     # next scene 
     opening_scene()
 
-def opening_scene():
-    #count = 15
-    #while count > 0:
-       # print(".")
-        #count = count - 1
-       # time.sleep(0.1)
+def opening_scene_p1():
+    count = 15
+    while count > 0:
+        print(".")
+        count = count - 1
+        time.sleep(0.1)
         
     print("\n", separator, "\n")    
     
-    print("\n                                                 ★ U N B O U N D \n\n\n")
+    print("\n                                                 ★ U N B O U N D \n\n")
     
     dialogue =  "-> You open your eyes and wake up. You look around and see that you're on a wobbly carriage.\n" \
                 "-> You try to move but your arms are bound.\n"\
@@ -298,7 +315,7 @@ def opening_scene():
     for i in dialogue:
         sys.stdout.write(i)
         sys.stdout.flush()
-        time.sleep(0.0001)
+        time.sleep(read_speed)
         
     print("\n", separator, "\n")        
     
@@ -310,16 +327,87 @@ def opening_scene():
             break
         
     print("\n", separator, "\n")
+    
+    opening_scene_p2()
         
-    dialogue =  ""
-
+def opening_scene_p2():
+    
+    dialogue =  "-> As the carriage you're riding nears the wooden gates of the walled settlement, you look out and see an imperial soldier atop the gates.\n"\
+                "-> The soldier calls out to the white haired man clad in gilded armor riding atop a horse.\n\n"\
+                " > Imperial Soldier : General Tullius, sir! The headsman is waiting!\n"\
+                " > General Tullius : Good. Let's get this over with.\n\n"\
+                "-> You turn your head back to your companions in the carriage.\n"\
+                "-> You and your companions realize that you'll all be heading for the chopping block.\n"\
+                "-> You hear the horse thief start calling out to the Divines\n\n"\
+                " > Horse Thief : Shor, Mara, Dibella, Kynareth, Akatosh! Divines, please help me!\n\n"\
+                "-> You now look toward the right side of the carriage and see the man in gilded armor.\n"\
+                "-> Inferring from the soldier atop the gate earlier. It seems that this 'Tulius' is a general of the empire.\n"\
+                "-> Riding beside him is a golden skinned elf in elegant gilded black robes.\n\n"\
+                " > Stormcloak Soldier : Look at him, General Tulius, the Military Governor.\n"\
+                " > Stormcloak Soldier : And it looks like the Thalmor are with him.\n"\
+                " > Stormcloak Soldier : Damn elves. I bet they had something to do with this.\n\n"\
+                "-> The carriage is now well inside the settlement\n"\
+                "-> You look around and see wooden houses with tatched roof and a few tall stone towers scattered about.\n\n"\
+                " > Stormcloak Soldier : This is Helgen. I used to be sweet on a girl from here.\n"\
+                " > Stormcloak Soldier : Wonder if Vilod is still making that mead with juniper berries mixed in\n"\
+                " > Stormcloak Soldier : Funny, when I was a boy, imperial walls and towers used to make me feel so safe.\n\n"\
+                "-> You turn your head far to the left side of the carriage and see a little boy with his father.\n\n"\
+                " > Little Boy : Who are they daddy? Where are they going?\n"\
+                " > Father : You need to go inside now, little cub.\n"\
+                " > Little Boy : Why? I want to watch the soldiers.\n"\
+                " > Father : Inside the house. Now.\n"\
+                " > Little Boy : Yes, papa.\n\n"\
+                " > Imperial Captain : Get these prisoners out of the carts. Move it!\n"\
+                " > Horse Thief : Why are we stopping?\n"\
+                " > Stormcloak Soldier : Why do you think? End of the line.\n"\
+                " > Stormcloak Soldier : Let's go. Shouldn't keep the gods waiting for us.\n\n"\
+                "-> You turn your gaze forward and see a large stone keep.\n"\
+                "-> The imperial soldier stops the carriage. It seems this is your final destination.\n"\
+                "-> You and your fellow prisoners make your way down the carriage.\n\n"\
+                " > Horse Thief : No! Wait! We're not rebels!\n"\
+                " > Stormcloak Soldier : Face your death with some courage, thief.\n"\
+                " > Horse Thief : You've got to tell them! We weren't with you! This is a mistake!\n"\
+                " > Imperial Captain : Step towards the block when we call your name. One at a time.\n\n"\
+                "-> An imperial soldier with a ledger and a quill is reading off a list and begins to call the names of your fellow prisoners.\n\n"\
+                " > Stormcloak Soldier : Empire loves their damn lists.\n"\
+                " > Imperial Soldier : Ulfric Stormcloak. Jarl of Windhelm.\n"\
+                " > Stormcloak Soldier : It has been an honor Jarl Ulfric!\n"\
+                " > Imperial Soldier : Ralof of Riverwood.\n"\
+                " > Imperial Soldier : Lokir of Rorikstead.\n\n"\
+                "-> It seems that the Horse Thief's name was Lokir..\n"\
+                "-> As the others make their way to the block. Lokir made a run for his life.\n\n"\
+                " > Lokir : You're not going to kill me!\n"\
+                " > Imperial Captain : Archers!\n\n"\
+                "-> Imperial archers aim for Lokir as he is running. Two arrows find their way through Lokir's back\n"\
+                "-> Lokir the horse thief drops dead on the cobblestone road.\n\n"\
+                " > Imperial Captain : Anyone else feel like running?\n\n"\
+                "-> It seems that it is now your turn to be called.\n"\
+                "-> The imperial soldier checks the list for your name and indentity but finds nothing.\n\n"\
+                " > Imperial Soldier : Wait. You there. Step forward.\n"\
+                " > Imperial Soldier : Who are you?\n"\
+                      
+    for i in dialogue:
+        sys.stdout.write(i)
+        sys.stdout.flush()
+        time.sleep(read_speed)    
+        
+    print("\n", separator, "\n") 
+    
+    while True: 
+        user_input = input("                                    CONTINUE? [ P̲R̲E̲S̲S̲ 1 T̲O̲ C̲O̲N̲T̲I̲N̲U̲E̲ ] ")
+    
+        if user_input == "1":
+            break
+    
+    print("\n", separator, "\n") 
+    
+    character_creation_menu()
     
 # program launch into main menu
+#opening_scene_p1()
+#opening_scene_p2()
 
-opening_scene()
-
-
-#main_menu_visual()
-#main_menu_function()
+main_menu_visual()
+main_menu_function()
 
 #action_screen()
