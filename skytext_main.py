@@ -3,16 +3,27 @@ import sys
 
 # dictionary for player status
 player_stats = {
-    'player_name'           : "Prisoner",
-    #player values           
-    'player_health'         : 0,
-    'player_magicka'        : 0,
-    'player_stamina'        : 0,  
-    'player_experience'     : 0,
-    'player_level'          : 1,    
+    'player_name'               : "Prisoner",
+    # player values           
+    'player_max_health'         : 0,
+    'player_current_health'     : 0,
+    
+    'player_max_stamina'        : 0, 
+    'player_current_stamina'    : 0, 
+    
+    'player_max_magicka'        : 0,
+    'player_current_magicka'    : 0, 
+    
+    'player_experience'         : 0,
+    'player_level'              : 1,  
+    # character creation
+    'player_gender'             : "",
+    'player_race'               : "",
+    
 }
 # dictionary for player's equipped gear
 player_equipment = {
+    
     'player_right_hand'     : "",
     'player_left_hand'      : "",
     'player_helmet'         : "",
@@ -34,6 +45,99 @@ gloves = {}
 boots = {}
 
 magic  = {}
+
+# thingss for character customization
+
+
+races = { 
+        'race_man': { 
+            
+            'nord': { 
+                    'health': nord_hp, 
+                    'stamina': nord_sta, 
+                    'magicka': nord_mp, 
+                    'abilities': ['Battle Cry', 'Cold Resistance'] 
+                    
+                    }, 
+            
+            'imperial': { 
+                    'health': imperial_hp, 
+                    'stamina': imperial_sta, 
+                    'magicka': imperial_mp, 
+                    'abilities': ['Voice of the Emperor', 'Gold Boost'] 
+                    
+                    }, 
+            
+            'breton': { 
+                    'health': breton_hp, 
+                    'stamina': breton_sta, 
+                    'magicka': breton_mp, 
+                    'abilities': ['Dragon Skin', 'Magicka Resistance'] 
+                    
+                    }, 
+            
+            'redguard': { 
+                    'health': redguard_hp, 
+                    'stamina': redguard_sta, 
+                    'magicka': redguard_mp, 
+                    'abilities': ['Adrenaline Rush', 'Poison Resistance'] 
+                        
+                    } 
+            
+            }, 
+        
+        'race_mer': { 
+            
+                    'altmer': { 
+                        'health': altmer_hp, 
+                        'stamina': altmer_sta, 
+                        'magicka': altmer_mp, 
+                        'abilities': ['Highborn', 'Magicka Boost'] 
+                        
+                    }, 
+                    
+                    'dunmer': { 
+                        'health': dunmer_hp, 
+                        'stamina': dunmer_sta, 
+                        'magicka': dunmer_mp,
+                        'abilities': ['Ancestor’s Wrath', 'Fire Resistance'] 
+                        
+                    },
+                     
+                    'bosmer': { 
+                        'health': bosmer_hp, 
+                        'stamina': bosmer_sta, 
+                        'magicka': bosmer_mp, 
+                        'abilities': ['Command Animal', 'Disease Resistance'] 
+                        
+                    }, 
+                    
+                    'orsimer': { 
+                        'health': orsimer_hp, 
+                        'stamina': orsimer_sta, 
+                        'magicka': orsimer_mp, 
+                        'abilities': ['Berserker Rage', 'Heavy Armor Boost'] 
+                        
+                    } 
+                    
+            }, 
+        
+        'race_beast': { 
+            
+                    'argonian': { 
+                        'health': argonian_hp, 
+                        'stamina': argonian_sta, 
+                        'magicka': argonian_mp, 
+                        'abilities': ['Histskin', 'Water Breathing'] }, 
+                    'kahjiit': { 
+                        'health': kahjiit_hp, 
+                        'stamina': kahjiit_sta, 
+                        'magicka': kahjiit_mp, 
+                        'abilities': ['Night Eye', 'Claw Attacks'] } 
+                    
+            } 
+        
+        }
 
 # initialization for text and other utils
 separator = "================================================================================================================="
@@ -175,14 +279,19 @@ def map_screen():
 # displays current player status
 def display_status():
     print("\n", separator, "\n")
+    
     print(player_stats['player_name'])
-    print("HP:", player_stats['player_health'], 
-          "| MP:", player_stats['player_magicka'], 
-          "| STA:", player_stats['player_stamina'])
-    print("EXP: ", player_stats['player_experience'],
-          "| LVL :", player_stats['player_level'])
+    
+    print("HP:", player_stats['player_current_health'],"/", player_stats['player_max_health'], 
+          "| MP:", player_stats['player_current_magicka'],"/", player_stats['player_max_magicka'], 
+          "| STA:", player_stats['player_current_stamina'],"/", player_stats['player_max_stamina'])
+    
+    print("EXP: ", player_stats['player_experience'], "/ 100",
+          "| LVL: ", player_stats['player_level'])
+    
+    print("RACE: ", player_stats['player_race'])
+    
     print("\n", separator, "\n")
-
 
 # !!!functions for gameplay!!!
 
@@ -406,8 +515,8 @@ def opening_scene_p2():
 # program launch into main menu
 #opening_scene_p1()
 #opening_scene_p2()
-
-main_menu_visual()
-main_menu_function()
+display_status()
+#main_menu_visual()
+#main_menu_function()
 
 #action_screen()
