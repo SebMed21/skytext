@@ -105,7 +105,7 @@ def main_menu_function():
                 continue
                    
 def character_creation_menu():
-    print("*SHOW CHARACTER CREATION SCREEN HERE*")     
+    print("*SHOW CHARACTER CREATION SCREEN*")     
     
     print("\n", separator, "\n")               
                    
@@ -267,7 +267,7 @@ def game_opening():
 
     
     # next scene 
-    opening_scene()
+    opening_scene_p1()
 
 def opening_scene_p1():
     count = 15
