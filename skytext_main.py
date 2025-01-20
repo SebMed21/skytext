@@ -147,7 +147,7 @@ separator = "===================================================================
     # print("\n", separator, "\n")
     # user_choice = input("Enter your choice: ")
 
-read_speed = 0.05 # default speed of text that can be changed in the settings
+read_speed = 0.0001 # default speed of text that can be changed in the settings
 
 # displays the opening main menu for the game 
 def main_menu_visual():
@@ -373,7 +373,7 @@ def character_creation():
                 player_stats['player_max_hp'] = races['race_man']['nord']['health']
                 player_stats['player_max_sta'] = races['race_man']['nord']['stamina']
                 player_stats['player_max_mp'] = races['race_man']['nord']['magicka']
-                player_stats['player_race'] = races['race_man']['nord']
+                player_stats['player_race'] = "nord"
                 player_stats["player_ability"] = races['race_man']['nord']['ability']
                 break
                 
@@ -388,7 +388,7 @@ def character_creation():
                 player_stats['player_max_hp'] = races['race_man']['imperial']['health']
                 player_stats['player_max_sta'] = races['race_man']['imperial']['stamina']
                 player_stats['player_max_mp'] = races['race_man']['imperial']['magicka']
-                player_stats['player_race'] = races['race_man']['imperial']
+                player_stats['player_race'] = "imperial"
                 player_stats["player_ability"] = races['race_man']['imperial']['ability']  
                 break
             
@@ -403,7 +403,7 @@ def character_creation():
                 player_stats['player_max_hp'] = races['race_man']['breton']['health']
                 player_stats['player_max_sta'] = races['race_man']['breton']['stamina']
                 player_stats['player_max_mp'] = races['race_man']['breton']['magicka']
-                player_stats['player_race'] = races['race_man']['breton']
+                player_stats['player_race'] = "breton"
                 player_stats["player_ability"] = races['race_man']['breton']['ability']  
                 break
             
@@ -419,7 +419,7 @@ def character_creation():
                 player_stats['player_max_hp'] = races['race_man']['redguard']['health']
                 player_stats['player_max_sta'] = races['race_man']['redguard']['stamina']
                 player_stats['player_max_mp'] = races['race_man']['redguard']['magicka']
-                player_stats['player_race'] = races['race_man']['redguard']
+                player_stats['player_race'] = "redguard"
                 player_stats["player_ability"] = races['race_man']['redguard']['ability']  
                 break
             
@@ -435,7 +435,7 @@ def character_creation():
                 player_stats['player_max_hp'] = races['race_mer']['altmer']['health']
                 player_stats['player_max_sta'] = races['race_mer']['altmer']['stamina']
                 player_stats['player_max_mp'] = races['race_mer']['altmer']['magicka']
-                player_stats['player_race'] = races['race_mer']['altmer']
+                player_stats['player_race'] = "altmer"
                 player_stats["player_ability"] = races['race_mer']['altmer']['ability']  
                 break
             
@@ -451,7 +451,7 @@ def character_creation():
                 player_stats['player_max_hp'] = races['race_mer']['dunmer']['health']
                 player_stats['player_max_sta'] = races['race_mer']['dunmer']['stamina']
                 player_stats['player_max_mp'] = races['race_mer']['dunmer']['magicka']
-                player_stats['player_race'] = races['race_mer']['dunmer']
+                player_stats['player_race'] = "dunmer"
                 player_stats["player_ability"] = races['race_mer']['dunmer']['ability']  
                 break
             
@@ -467,7 +467,7 @@ def character_creation():
                 player_stats['player_max_hp'] = races['race_mer']['bosmer']['health']
                 player_stats['player_max_sta'] = races['race_mer']['bosmer']['stamina']
                 player_stats['player_max_mp'] = races['race_mer']['bosmer']['magicka']
-                player_stats['player_race'] = races['race_mer']['bosmer']
+                player_stats['player_race'] = "bosmer"
                 player_stats["player_ability"] = races['race_mer']['bosmer']['ability']  
                 break
 
@@ -480,7 +480,7 @@ def character_creation():
                 player_stats['player_max_hp'] = races['race_mer']['orsimer']['health']
                 player_stats['player_max_sta'] = races['race_mer']['orsimer']['stamina']
                 player_stats['player_max_mp'] = races['race_mer']['orsimer']['magicka']
-                player_stats['player_race'] = races['race_mer']['orsimer']
+                player_stats['player_race'] = "orsimer"
                 player_stats["player_ability"] = races['race_mer']['orsimer']['ability']  
                 break
             
@@ -496,7 +496,7 @@ def character_creation():
                 player_stats['player_max_hp'] = races['race_beast']['argonian']['health']
                 player_stats['player_max_sta'] = races['race_beast']['argonian']['stamina']
                 player_stats['player_max_mp'] = races['race_beast']['argonian']['magicka']
-                player_stats['player_race'] = races['race_beast']['argonian']
+                player_stats['player_race'] = "argonian"
                 player_stats["player_ability"] = races['race_beast']['argonian']['ability']  
                 break
             
@@ -512,7 +512,7 @@ def character_creation():
                 player_stats['player_max_hp'] = races['race_beast']['kahjiit']['health']
                 player_stats['player_max_sta'] = races['race_beast']['kahjiit']['stamina']
                 player_stats['player_max_mp'] = races['race_beast']['kahjiit']['magicka']
-                player_stats['player_race'] = races['race_beast']['kahjiit']
+                player_stats['player_race'] = "kahjiit"
                 player_stats["player_ability"] = races['race_beast']['kahjiit']['ability']  
                 break
             
@@ -532,6 +532,10 @@ def character_creation():
                         
         elif user_choice == "2":
             continue
+    
+    print("\n", separator, "\n")  
+      
+    execution_scene()
                 
 # !!! Gameplay Menus !!!               
 # displays the current actions a user can do
@@ -837,13 +841,36 @@ def opening_scene_p2():
         time.sleep(0.2)
     
     character_creation()
+
+def execution_scene():
     
+    count = 15
+    while count > 0:
+        print(".")
+        count = count - 1
+        time.sleep(0.2)
+        
+        # special dialogue for the player's race
+        if player_stats['player_race'] == "nord":
+            
+            dialogue =  "-> You tell the imperial soldier with a ledger who you are.\n"\
+                            "-> The imperial soldier remarks your race and origin and wonders about your identity.\n"\
+            
+            for i in dialogue:
+                sys.stdout.write(i)
+                sys.stdout.flush()
+                time.sleep(read_speed)
+            
+            break
+                    
 # program launch into main menu
 #opening_scene_p1()
 #opening_scene_p2()
+#execution_scene()
 #display_status()
 #action_screen()
-#character_creation()
+character_creation()
 
-main_menu_visual()
-main_menu_function()
+
+#main_menu_visual()
+#main_menu_function()
