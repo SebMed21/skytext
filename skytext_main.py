@@ -489,7 +489,7 @@ def character_creation():
                         
         elif user_choice == "2":
             continue 
-                
+# settings for the game           
 def settings():
     print("\n", separator, "\n")
     print(" TEXT SPEED: (how fast the dialogue and text gets printed out):\n")
