@@ -21,9 +21,9 @@ player_stats = {
     'player_race'               : "",
     # other
     'player_ability'            : ""
-    
-    
+      
 }
+
 # dictionary for player's equipped gear
 player_equipment = {
     
@@ -50,79 +50,39 @@ boots = {}
 magic  = {}
 
 # things for character customization
-#race values
-nord_hp = 100
-nord_sta = 100
-nord_mp = 100
-
-imperial_hp = 100
-imperial_sta = 100
-imperial_mp = 100
-
-breton_hp = 100
-breton_sta = 100
-breton_mp = 100
-
-redguard_hp = 100
-redguard_sta = 100
-redguard_mp = 100
-
-altmer_hp = 100
-altmer_sta = 100
-altmer_mp = 100
-
-dunmer_hp = 100
-dunmer_sta = 100
-dunmer_mp = 100
-
-bosmer_hp = 100
-bosmer_sta = 100
-bosmer_mp = 100
-
-orsimer_hp = 100
-orsimer_sta = 100
-orsimer_mp = 100
-
-argonian_hp = 100
-argonian_sta = 100
-argonian_mp = 100
-
-kahjiit_hp = 100
-kahjiit_sta = 100
-kahjiit_mp = 100
 
 # possible character races with abilities 
 races = { 
         'race_man': { 
             
             'nord': { 
-                    'health': nord_hp, 
-                    'stamina': nord_sta, 
-                    'magicka': nord_mp, 
+                    'health': 100, 
+                    'stamina': 100, 
+                    'magicka': 100, 
                     'ability': ['Battle Cry', 'Cold Resistance'] 
                     
                     }, 
             
             'imperial': { 
-                    'health': imperial_hp, 
-                    'stamina': imperial_sta, 
-                    'magicka': imperial_mp, 
+                    'health': 100, 
+                    'stamina': 100, 
+                    'magicka': 100, 
                     'ability': ['Voice of the Emperor', 'Gold Boost'] 
                     
                     }, 
             
             'breton': { 
-                    'health': breton_hp, 
-                    'stamina': breton_sta, 
-                    'magicka': breton_mp, 
+                    'health': 100, 
+                    'stamina': 100, 
+                    'magicka': 100, 
                     'ability': ['Dragon Skin', 'Magicka Resistance'] 
                     
                     }, 
             
             'redguard': { 
-                    'health': redguard_hp, 
-                    'stamina': redguard_sta, 
-                    'magicka': redguard_mp, 
+                    'health': 100, 
+                    'stamina': 100, 
+                    'magicka': 100, 
                     'ability': ['Adrenaline Rush', 'Poison Resistance'] 
                         
                     } 
@@ -132,33 +92,33 @@ races = {
         'race_mer': { 
             
                     'altmer': { 
-                        'health': altmer_hp, 
-                        'stamina': altmer_sta, 
-                        'magicka': altmer_mp, 
+                        'health': 100, 
+                        'stamina': 100, 
+                        'magicka': 100, 
                         'ability': ['Highborn', 'Magicka Boost'] 
                         
                     }, 
                     
                     'dunmer': { 
-                        'health': dunmer_hp, 
-                        'stamina': dunmer_sta, 
-                        'magicka': dunmer_mp,
+                        'health': 100, 
+                        'stamina': 100, 
+                        'magicka': 100,
                         'ability': ['Ancestor’s Wrath', 'Fire Resistance'] 
                         
                     },
                      
                     'bosmer': { 
-                        'health': bosmer_hp, 
-                        'stamina': bosmer_sta, 
-                        'magicka': bosmer_mp, 
+                        'health': 100, 
+                        'stamina': 100, 
+                        'magicka': 100, 
                         'ability': ['Command Animal', 'Disease Resistance'] 
                         
                     }, 
                     
                     'orsimer': { 
-                        'health': orsimer_hp, 
-                        'stamina': orsimer_sta, 
-                        'magicka': orsimer_mp, 
+                        'health': 100, 
+                        'stamina': 100, 
+                        'magicka': 100, 
                         'ability': ['Berserker Rage', 'Heavy Armor Boost'] 
                         
                     } 
@@ -168,14 +128,14 @@ races = {
         'race_beast': { 
             
                     'argonian': { 
-                        'health': argonian_hp, 
-                        'stamina': argonian_sta, 
-                        'magicka': argonian_mp, 
+                        'health': 100, 
+                        'stamina': 100, 
+                        'magicka': 100, 
                         'ability': ['Histskin', 'Water Breathing'] }, 
                     'kahjiit': { 
-                        'health': kahjiit_hp, 
-                        'stamina': kahjiit_sta, 
-                        'magicka': kahjiit_mp, 
+                        'health': 100, 
+                        'stamina': 100, 
+                        'magicka': 100, 
                         'ability': ['Night Eye', 'Claw Attacks'] } 
                     
             } 
@@ -294,67 +254,67 @@ def character_creation():
     print("                                           ( |  CHARACTER RACE  | )\n")
     
     # Nord race
-    print(f"[1] Nord : text here")
-    print(f"Health: {nord_hp} | Stamina: {nord_sta} | Magicka : {nord_mp}")
+    print(f"[1] Nord : Citizens of Skyrim. They are tall and fair-haired people. Strong and hardy, nords are famous for their resistance to cold and their talent as warriors.")
+    print(f"Health: {races['race_man']['nord']['health']} | Stamina: {races['race_man']['nord']['stamina']} | Magicka : {races['race_man']['nord']['magicka']}")
     x = races['race_man']['nord']['ability']
     print(f"Abilities : {x}\n")   
     
     # Imperial race
-    print(f"[2] Imperial : text here")
-    print(f"Health: {imperial_hp} | Stamina: {imperial_sta} | Magicka : {imperial_mp}")
+    print(f"[2] Imperial : Natives of Cyrodiil. They have proved to be shrewed diplomats and traders. They are skilled with combat and magic.\nAnywhere gold coins might be found, Imperials gold coins might be found, Imperials seem to always find a few more.")
+    print(f"Health: {races['race_man']['imperial']['health']} | Stamina: {races['race_man']['imperial']['stamina']} | Magicka : {races['race_man']['imperial']['magicka']}")
     x = races['race_man']['imperial']['ability']
     print(f"Abilities : {x}\n") 
     
     # Breton race
-    print(f"[3] Breton : text here")
-    print(f"Health: {breton_hp} | Stamina: {breton_sta} | Magicka : {breton_mp}")
+    print(f"[3] Breton : In addition to their quick and perceptive grasp of spellcraft, even the humblest of High Rock's Bretons can boast a resistance to magic.")
+    print(f"Health: {races['race_man']['breton']['health']} | Stamina: {races['race_man']['breton']['stamina']} | Magicka : {races['race_man']['breton']['magicka']}")
     x = races['race_man']['breton']['ability']
     print(f"Abilities : {x}\n")
     
     # Redguard race           
-    print(f"[4] Redguard : text here")
-    print(f"Health: {redguard_hp} | Stamina: {redguard_sta} | Magicka : {redguard_mp}")
+    print(f"[4] Redguard : The most naturally talented warriors in Tamriel, the Redguards of Hammerfell have a hardy constitution and a natural resistance to poison.")
+    print(f"Health: {races['race_man']['redguard']['health']} | Stamina: {races['race_man']['redguard']['stamina']} | Magicka : {races['race_man']['redguard']['magicka']}")
     x = races['race_man']['redguard']['ability']
     print(f"Abilities : {x}\n")    
     
     # Altmer race
-    print(f"[5] Altmer : text here")
-    print(f"Health: {altmer_hp} | Stamina: {altmer_sta} | Magicka : {altmer_mp}")
+    print(f"[5] High Elf : Also known as 'Altmer' in their homeland of Summerset Isle, the high elves are most strongly gifted in the arcane arts of all the races.")
+    print(f"Health: {races['race_mer']['altmer']['health']} | Stamina: {races['race_mer']['altmer']['stamina']} | Magicka : {races['race_mer']['altmer']['magicka']}")
     x = races['race_mer']['altmer']['ability']
     print(f"Abilities : {x}\n") 
     
     # Dunmer race
-    print(f"[6] Dunmer : text here")
-    print(f"Health: {dunmer_hp} | Stamina: {dunmer_sta} | Magicka : {dunmer_mp}")
+    print(f"[6] Dark Elf : Also known as 'Dunmer' in their homeland of Morrowind, dark elves are noted for their stealth and magic skills.")
+    print(f"Health: {races['race_mer']['dunmer']['health']} | Stamina: {races['race_mer']['dunmer']['stamina']} | Magicka : {races['race_mer']['dunmer']['magicka']}")
     x = races['race_mer']['dunmer']['ability']
     print(f"Abilities : {x}\n")
    
     # Bosmer race
-    print(f"[7] Bosmer : text here")
-    print(f"Health: {bosmer_hp} | Stamina: {bosmer_sta} | Magicka : {bosmer_mp}")
+    print(f"[7] Wood Elf : The clanfolk of the Western Valendwood forests, also known as 'Bosmer'. Wood elves make good scouts and thieves, and there are no finer archers in all of Tamriel.")
+    print(f"Health: {races['race_mer']['bosmer']['health']} | Stamina: {races['race_mer']['bosmer']['stamina']} | Magicka : {races['race_mer']['bosmer']['magicka']}")
     x = races['race_mer']['bosmer']['ability']
     print(f"Abilities : {x}\n")   
     
     # Orsimer race
-    print(f"[8] Orsimer : text here")
-    print(f"Health: {orsimer_hp} | Stamina: {orsimer_sta} | Magicka : {orsimer_mp}")
+    print(f"[8] Orc : Also known as 'Orsimer'. The people of Wrothgarian and Dragontail Mountains, orcish smiths are prized for their craftsmanship. Orc troops in heavy armor are among the finest in the Empire.")
+    print(f"Health: {races['race_mer']['orsimer']['health']} | Stamina: {races['race_mer']['orsimer']['stamina']} | Magicka : {races['race_mer']['orsimer']['magicka']}")
     x = races['race_mer']['orsimer']['ability']
     print(f"Abilities : {x}\n") 
     
     # Argonian race
-    print(f"[9] Argonian : text here")
-    print(f"Health: {argonian_hp} | Stamina: {argonian_sta} | Magicka : {argonian_mp}")
+    print(f"[9] Argonian : This reptilian race, well-suited for the treacherous swamps of their Black Marsh homeland, has developed a natural resistances to diseases and the ability to breath underwater.")
+    print(f"Health: {races['race_beast']['argonian']['health']} | Stamina: {races['race_beast']['argonian']['stamina']} | Magicka : {races['race_beast']['argonian']['magicka']}")
     x = races['race_beast']['argonian']['ability']
     print(f"Abilities : {x}\n") 
     
-    print(f"[10] Kahjiit : text here")
-    print(f"Health: {kahjiit_hp} | Stamina: {kahjiit_sta} | Magicka : {kahjiit_mp}")
+    print(f"[10] Kahjiit : Hailing from the province of Elsweyr, they are intelligent, quick, and agile. They make excellent thieves due to their natural stealhiness.")
+    print(f"Health: {races['race_beast']['kahjiit']['health']} | Stamina: {races['race_beast']['kahjiit']['stamina']} | Magicka : {races['race_beast']['kahjiit']['magicka']}")
     x = races['race_beast']['kahjiit']['ability']
     print(f"Abilities : {x}\n") 
     
     print("\n", separator, "\n")
     print("MAN :    ( | [1] N̲O̲R̲D̲ | [2] I̲M̲P̲E̲R̲I̲A̲L̲ | [3] B̲R̲E̲T̲O̲N̲ | [4] R̲E̲D̲G̲U̲A̲R̲D̲ | )")
-    print("MER :    ( | [5] A̲L̲T̲M̲E̲R̲ | [6] D̲U̲N̲M̲E̲R̲ | [7] B̲O̲S̲M̲E̲R̲ | [8] O̲R̲S̲I̲M̲E̲R̲ | )")
+    print("MER :    ( | [5] H̲I̲G̲H̲ E̲L̲F̲ | [6] D̲A̲R̲K̲ E̲L̲F̲ | [7] W̲O̲O̲D̲ E̲L̲F̲ | [8] O̲R̲C̲ | )")
     print("BEAST :  ( | [9] A̲R̲G̲O̲N̲I̲A̲N̲ | [10] K̲A̲H̲J̲I̲I̲T̲ | )")
     print("\n", separator, "\n")
         
@@ -529,7 +489,6 @@ def character_creation():
                         
         elif user_choice == "2":
             continue 
-
                 
 # !!! Gameplay Menus !!!               
 # displays the current actions a user can do
@@ -827,6 +786,12 @@ def opening_scene_p2():
             break
     
     print("\n", separator, "\n") 
+    
+    count = 15
+    while count > 0:
+        print(".")
+        count = count - 1
+        time.sleep(0.2)
     
     character_creation()
     
