@@ -849,9 +849,11 @@ def execution_scene():
         print(".")
         count = count - 1
         time.sleep(0.2)
+    
+    print("\n", separator, "\n")
         
-        # special dialogue for the player's race
-        if player_stats['player_race'] == "nord":
+    # special dialogue for the player's race
+    if player_stats['player_race'] == "nord": # dialogue for nord and so on
             
             dialogue =  "-> You tell the imperial soldier with a ledger who you are.\n"\
                         "-> The imperial soldier remarks your race and origin and wonders about your identity.\n\n"\
@@ -861,10 +863,8 @@ def execution_scene():
                 sys.stdout.write(i)
                 sys.stdout.flush()
                 time.sleep(read_speed)
-                            
-                break
             
-        elif player_stats['player_race'] == "imperial":
+    elif player_stats['player_race'] == "imperial": 
             
             dialogue =  "-> You tell the imperial soldier with a ledger who you are.\n"\
                         "-> The imperial soldier remarks your race and origin and wonders about your identity.\n\n"\
@@ -874,10 +874,8 @@ def execution_scene():
                 sys.stdout.write(i)
                 sys.stdout.flush()
                 time.sleep(read_speed)
-                            
-                break
-            
-        elif player_stats['player_race'] == "breton":
+                        
+    elif player_stats['player_race'] == "breton":
                 
             dialogue =  "-> You tell the imperial soldier with a ledger who you are.\n"\
                         "-> The imperial soldier remarks your race and origin and wonders about your identity.\n\n"\
@@ -887,10 +885,8 @@ def execution_scene():
                 sys.stdout.write(i)
                 sys.stdout.flush()
                 time.sleep(read_speed)
-                                
-                break
-                
-        elif player_stats['player_race'] == "redguard":
+                      
+    elif player_stats['player_race'] == "redguard":
                 
             dialogue =  "-> You tell the imperial soldier with a ledger who you are.\n"\
                         "-> The imperial soldier remarks your race and origin and wonders about your identity.\n\n"\
@@ -900,10 +896,8 @@ def execution_scene():
                 sys.stdout.write(i)
                 sys.stdout.flush()
                 time.sleep(read_speed)
-                                
-                break
-       
-        elif player_stats['player_race'] == "altmer":
+                                 
+    elif player_stats['player_race'] == "altmer":
                 
             dialogue =  "-> You tell the imperial soldier with a ledger who you are.\n"\
                         "-> The imperial soldier remarks your race and origin and wonders about your identity.\n\n"\
@@ -913,10 +907,8 @@ def execution_scene():
                 sys.stdout.write(i)
                 sys.stdout.flush()
                 time.sleep(read_speed)
-                                
-                break
-            
-        elif player_stats['player_race'] == "dunmer":
+                                        
+    elif player_stats['player_race'] == "dunmer":
                 
             dialogue =  "-> You tell the imperial soldier with a ledger who you are.\n"\
                         "-> The imperial soldier remarks your race and origin and wonders about your identity.\n\n"\
@@ -929,7 +921,7 @@ def execution_scene():
                                 
                 break 
         
-        elif player_stats['player_race'] == "bosmer":
+    elif player_stats['player_race'] == "bosmer":
                 
             dialogue =  "-> You tell the imperial soldier with a ledger who you are.\n"\
                         "-> The imperial soldier remarks your race and origin and wonders about your identity.\n\n"\
@@ -939,10 +931,8 @@ def execution_scene():
                 sys.stdout.write(i)
                 sys.stdout.flush()
                 time.sleep(read_speed)
-                                
-                break  
-            
-        elif player_stats['player_race'] == "orsimer":
+                                        
+    elif player_stats['player_race'] == "orsimer":
                 
             dialogue =  "-> You tell the imperial soldier with a ledger who you are.\n"\
                         "-> The imperial soldier remarks your race and origin and wonders about your identity.\n\n"\
@@ -952,10 +942,8 @@ def execution_scene():
                 sys.stdout.write(i)
                 sys.stdout.flush()
                 time.sleep(read_speed)
-                                
-                break     
-
-        elif player_stats['player_race'] == "argonian":
+                                   
+    elif player_stats['player_race'] == "argonian":
                 
             dialogue =  "-> You tell the imperial soldier with a ledger who you are.\n"\
                         "-> The imperial soldier remarks your race and origin and wonders about your identity.\n\n"\
@@ -965,10 +953,9 @@ def execution_scene():
                 sys.stdout.write(i)
                 sys.stdout.flush()
                 time.sleep(read_speed)
-                                
-                break 
-            
-        elif player_stats['player_race'] == "kahjiit":
+                      
+                      
+    elif player_stats['player_race'] == "kahjiit":
                 
             dialogue =  "-> You tell the imperial soldier with a ledger who you are.\n"\
                         "-> The imperial soldier remarks your race and origin and wonders about your identity.\n\n"\
@@ -978,10 +965,7 @@ def execution_scene():
                 sys.stdout.write(i)
                 sys.stdout.flush()
                 time.sleep(read_speed)
-                                
-                break 
-    
-                    
+                                     
 # program launch into main menu
 #opening_scene_p1()
 #opening_scene_p2()
