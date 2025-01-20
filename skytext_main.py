@@ -184,6 +184,7 @@ def main_menu_visual():
     
     
     print("\n", separator, "\n")
+
 # functionality of the main menu to start the game or access the other menus
 def main_menu_function():
     while True:
@@ -210,6 +211,48 @@ def main_menu_function():
                 
             elif user_choice == "2":
                 continue
+
+# settings for the game           
+def settings():
+    print("\n", separator, "\n")
+    print(" TEXT SPEED: (how fast the dialogue and text gets printed out):\n")
+    print("                        ( |    [1] I̲N̲S̲T̲A̲N̲T̲ (0.0)    |   [2] F̲A̲S̲T̲ (0.02)    |   [3] D̲E̲F̲A̲U̲L̲T̲ (0.05)   |   [4] S̲L̲O̲W̲ (0.07)   |   [5] R̲E̲A̲L̲L̲Y̲ S̲L̲O̲W̲ (0.1)   | )\n")
+    print("( |  [6] R̲E̲T̲U̲R̲N̲  | )")
+    print("\n", separator)
+    
+    while True:
+        user_choice = input("\nEnter your choice: ")
+        
+        if user_choice == "1":
+            read_speed = 0.0 # instant speed
+            print(f"Text Speed Set to : Instant ({read_speed})")
+            
+        
+        elif user_choice == "2":
+            read_speed = 0.02 # fast speed
+            print(f"Text Speed Set to : Fast ({read_speed})")
+            
+            
+        elif user_choice == "3":
+            read_speed = 0.5 # default speed
+            print(f"Text Speed Set to : Default ({read_speed})")
+            
+        
+        elif user_choice == "4":
+            read_speed = 0.07 # slow speed
+            print(f"Text Speed Set to : Slow ({read_speed})")
+            
+            
+        elif user_choice == "5":
+            read_speed = 0.1 # really slow speed
+            print(f"Text Speed Set to : Really Slow ({read_speed})")
+        
+            
+        elif user_choice == "6":
+            main_menu_visual()
+            main_menu_function()
+            break
+        
 # displays the character creation menu                   
 def character_creation():
     print("\n", separator, "\n") 
@@ -488,48 +531,8 @@ def character_creation():
             break
                         
         elif user_choice == "2":
-            continue 
-# settings for the game           
-def settings():
-    print("\n", separator, "\n")
-    print(" TEXT SPEED: (how fast the dialogue and text gets printed out):\n")
-    print("                        ( |    [1] I̲N̲S̲T̲A̲N̲T̲ (0.0)    |   [2] F̲A̲S̲T̲ (0.02)    |   [3] D̲E̲F̲A̲U̲L̲T̲ (0.05)   |   [4] S̲L̲O̲W̲ (0.07)   |   [5] R̲E̲A̲L̲L̲Y̲ S̲L̲O̲W̲ (0.1)   | )\n")
-    print("( |  [6] R̲E̲T̲U̲R̲N̲  | )")
-    print("\n", separator)
-    
-    while True:
-        user_choice = input("\nEnter your choice: ")
-        
-        if user_choice == "1":
-            read_speed = 0.0 # instant speed
-            print(f"Text Speed Set to : Instant ({read_speed})")
-            
-        
-        elif user_choice == "2":
-            read_speed = 0.02 # fast speed
-            print(f"Text Speed Set to : Fast ({read_speed})")
-            
-            
-        elif user_choice == "3":
-            read_speed = 0.5 # default speed
-            print(f"Text Speed Set to : Default ({read_speed})")
-            
-        
-        elif user_choice == "4":
-            read_speed = 0.07 # slow speed
-            print(f"Text Speed Set to : Slow ({read_speed})")
-            
-            
-        elif user_choice == "5":
-            read_speed = 0.1 # really slow speed
-            print(f"Text Speed Set to : Really Slow ({read_speed})")
-        
-            
-        elif user_choice == "6":
-            main_menu_visual()
-            main_menu_function()
-            break
-            
+            continue
+                
 # !!! Gameplay Menus !!!               
 # displays the current actions a user can do
 def action_screen():
