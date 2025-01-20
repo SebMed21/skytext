@@ -187,7 +187,7 @@ separator = "===================================================================
     # print("\n", separator, "\n")
     # user_choice = input("Enter your choice: ")
     
-read_speed = 0.02
+read_speed = 0.05
 
 # displays the opening main menu for the game 
 def main_menu_visual():
@@ -737,7 +737,7 @@ def opening_scene_p1():
                 " > Horse Thief : Why do you care?\n"\
                 " > Stormcloak soldier : A nord's last thoughts should be of home.\n"\
                 " > Horse Thief : Rorikstead. I'm... I'm from Rorikstead.\n\n"\
-                "-> You see the walls get closer and closer until you are almost beneath it's feet...\n\n"
+                "-> You see the walls get closer and closer until you are almost beneath its feet...\n\n"
                    
     for i in dialogue:
         sys.stdout.write(i)
@@ -828,16 +828,14 @@ def opening_scene_p2():
     
     print("\n", separator, "\n") 
     
-    character_creation_menu()
+    character_creation()
     
 # program launch into main menu
 #opening_scene_p1()
 #opening_scene_p2()
 #display_status()
 #action_screen()
-character_creation()
+#character_creation()
 
-
-#main_menu_visual()
-#main_menu_function()
-
+main_menu_visual()
+main_menu_function()
