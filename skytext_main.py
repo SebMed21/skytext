@@ -19,6 +19,9 @@ player_stats = {
     # character creation
     'player_gender'             : "",
     'player_race'               : "",
+    # other
+    'player_ability'            : ""
+    
     
 }
 # dictionary for player's equipped gear
@@ -96,7 +99,7 @@ races = {
                     'health': nord_hp, 
                     'stamina': nord_sta, 
                     'magicka': nord_mp, 
-                    'abilities': ['Battle Cry', 'Cold Resistance'] 
+                    'ability': ['Battle Cry', 'Cold Resistance'] 
                     
                     }, 
             
@@ -104,7 +107,7 @@ races = {
                     'health': imperial_hp, 
                     'stamina': imperial_sta, 
                     'magicka': imperial_mp, 
-                    'abilities': ['Voice of the Emperor', 'Gold Boost'] 
+                    'ability': ['Voice of the Emperor', 'Gold Boost'] 
                     
                     }, 
             
@@ -112,7 +115,7 @@ races = {
                     'health': breton_hp, 
                     'stamina': breton_sta, 
                     'magicka': breton_mp, 
-                    'abilities': ['Dragon Skin', 'Magicka Resistance'] 
+                    'ability': ['Dragon Skin', 'Magicka Resistance'] 
                     
                     }, 
             
@@ -120,7 +123,7 @@ races = {
                     'health': redguard_hp, 
                     'stamina': redguard_sta, 
                     'magicka': redguard_mp, 
-                    'abilities': ['Adrenaline Rush', 'Poison Resistance'] 
+                    'ability': ['Adrenaline Rush', 'Poison Resistance'] 
                         
                     } 
             
@@ -132,7 +135,7 @@ races = {
                         'health': altmer_hp, 
                         'stamina': altmer_sta, 
                         'magicka': altmer_mp, 
-                        'abilities': ['Highborn', 'Magicka Boost'] 
+                        'ability': ['Highborn', 'Magicka Boost'] 
                         
                     }, 
                     
@@ -140,7 +143,7 @@ races = {
                         'health': dunmer_hp, 
                         'stamina': dunmer_sta, 
                         'magicka': dunmer_mp,
-                        'abilities': ['Ancestor’s Wrath', 'Fire Resistance'] 
+                        'ability': ['Ancestor’s Wrath', 'Fire Resistance'] 
                         
                     },
                      
@@ -148,7 +151,7 @@ races = {
                         'health': bosmer_hp, 
                         'stamina': bosmer_sta, 
                         'magicka': bosmer_mp, 
-                        'abilities': ['Command Animal', 'Disease Resistance'] 
+                        'ability': ['Command Animal', 'Disease Resistance'] 
                         
                     }, 
                     
@@ -156,7 +159,7 @@ races = {
                         'health': orsimer_hp, 
                         'stamina': orsimer_sta, 
                         'magicka': orsimer_mp, 
-                        'abilities': ['Berserker Rage', 'Heavy Armor Boost'] 
+                        'ability': ['Berserker Rage', 'Heavy Armor Boost'] 
                         
                     } 
                     
@@ -168,12 +171,12 @@ races = {
                         'health': argonian_hp, 
                         'stamina': argonian_sta, 
                         'magicka': argonian_mp, 
-                        'abilities': ['Histskin', 'Water Breathing'] }, 
+                        'ability': ['Histskin', 'Water Breathing'] }, 
                     'kahjiit': { 
                         'health': kahjiit_hp, 
                         'stamina': kahjiit_sta, 
                         'magicka': kahjiit_mp, 
-                        'abilities': ['Night Eye', 'Claw Attacks'] } 
+                        'ability': ['Night Eye', 'Claw Attacks'] } 
                     
             } 
         
@@ -209,9 +212,9 @@ def main_menu_visual():
     print("⠀⠀⠀⠀⠈⢿⣿⡏⠀⠀⠀⠀⠀⠀⠸⣿⣿⡄⠀⠀⠀⠀⣿⣿⡿⠁⠀⠀⠀⠀")
     print("⠀⠀⠀⠀⠀⠘⣿⣿⣦⡀⠀⠀⠀⠀⠀⣿⣿⡇⠀⠀⢀⣴⣿⣿⠃⠀⠀⠀⠀⠀")
     print("⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣶⠀⠀⠀⢀⣿⡿⠃⠀⣾⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀")
-    print("⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⠀⠀⢠⣾⡿⠁⠀⠀⣿⣿⣿⠏⠀⠀⠀⠀⠀⠀⠀", "[1] NEW GAME           ")
-    print("⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⠀⢠⣿⡟⠀⠀⠀⠀⣿⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀","[2] CONTINUE GAME      ")
-    print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⠀⠈⣿⣇⠀⠀⠀⠀⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀","[3] EXIT               ")
+    print("⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⠀⠀⢠⣾⡿⠁⠀⠀⣿⣿⣿⠏⠀⠀⠀⠀⠀⠀⠀", "[1] N̲E̲W̲ G̲A̲M̲E̲           ")
+    print("⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⠀⢠⣿⡟⠀⠀⠀⠀⣿⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀","[2] C̲O̲N̲T̲I̲N̲U̲E̲ G̲A̲M̲E̲      ")
+    print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⠀⠈⣿⣇⠀⠀⠀⠀⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀","[3] E̲X̲I̲T̲               ")
     print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⠀⠀⣸⡿⠀⠀⠀⠀⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
     print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
     print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣆⠀⢀⣠⡶⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
@@ -248,21 +251,20 @@ def main_menu_function():
             elif user_choice == "2":
                 continue
 # displays the character creation menu                   
-def character_creation_gender():
+def character_creation():
     print("\n", separator, "\n") 
     print("                                         ( |  CHARACTER CREATION  | )")     
     print("\n", separator, "\n")               
-    
+    print("                                          ( |  CHARACTER GENDER  | )")
+   
     while True:
-        print("                                          ( |  CHARACTER GENDER  | )\n")
-        
-        print("What is your character's gender? ( | [1] M̲A̲L̲E̲ | [2] F̲E̲M̲A̲L̲E̲ | )\n")
+        print("\nWhat is your character's gender? ( | [1] M̲A̲L̲E̲ | [2] F̲E̲M̲A̲L̲E̲ | )")
         user_choice = input("Enter your choice: ")
             
             # Male choice
         if user_choice == "1":
                 
-            print("Are you sure? ( | [1] Y̲E̲S̲ | [2] N̲O̲ | )   *you cannot change this later*")
+            print("\nAre you sure? ( | [1] Y̲E̲S̲ | [2] N̲O̲ | )   *you cannot change this later*")
 
             user_choice = input("Enter your choice: ")
 
@@ -276,7 +278,7 @@ def character_creation_gender():
             # Female choice   
         elif user_choice == "2":
                 
-            print("Are you sure? ( | [1] Y̲E̲S̲ | [2] N̲O̲ | )   *you cannot change this later*")
+            print("\nAre you sure? ( | [1] Y̲E̲S̲ | [2] N̲O̲ | )   *you cannot change this later*")
 
             user_choice = input("Enter your choice: ")
 
@@ -294,76 +296,240 @@ def character_creation_gender():
     # Nord race
     print(f"[1] Nord : text here")
     print(f"Health: {nord_hp} | Stamina: {nord_sta} | Magicka : {nord_mp}")
-    x = races['race_man']['nord']['abilities']
+    x = races['race_man']['nord']['ability']
     print(f"Abilities : {x}\n")   
     
     # Imperial race
     print(f"[2] Imperial : text here")
     print(f"Health: {imperial_hp} | Stamina: {imperial_sta} | Magicka : {imperial_mp}")
-    x = races['race_man']['imperial']['abilities']
+    x = races['race_man']['imperial']['ability']
     print(f"Abilities : {x}\n") 
     
     # Breton race
     print(f"[3] Breton : text here")
     print(f"Health: {breton_hp} | Stamina: {breton_sta} | Magicka : {breton_mp}")
-    x = races['race_man']['breton']['abilities']
+    x = races['race_man']['breton']['ability']
     print(f"Abilities : {x}\n")
     
     # Redguard race           
     print(f"[4] Redguard : text here")
     print(f"Health: {redguard_hp} | Stamina: {redguard_sta} | Magicka : {redguard_mp}")
-    x = races['race_man']['redguard']['abilities']
+    x = races['race_man']['redguard']['ability']
     print(f"Abilities : {x}\n")    
     
     # Altmer race
     print(f"[5] Altmer : text here")
     print(f"Health: {altmer_hp} | Stamina: {altmer_sta} | Magicka : {altmer_mp}")
-    x = races['race_mer']['altmer']['abilities']
+    x = races['race_mer']['altmer']['ability']
     print(f"Abilities : {x}\n") 
     
     # Dunmer race
     print(f"[6] Dunmer : text here")
     print(f"Health: {dunmer_hp} | Stamina: {dunmer_sta} | Magicka : {dunmer_mp}")
-    x = races['race_mer']['dunmer']['abilities']
+    x = races['race_mer']['dunmer']['ability']
     print(f"Abilities : {x}\n")
    
     # Bosmer race
     print(f"[7] Bosmer : text here")
     print(f"Health: {bosmer_hp} | Stamina: {bosmer_sta} | Magicka : {bosmer_mp}")
-    x = races['race_mer']['bosmer']['abilities']
+    x = races['race_mer']['bosmer']['ability']
     print(f"Abilities : {x}\n")   
     
     # Orsimer race
     print(f"[8] Orsimer : text here")
     print(f"Health: {orsimer_hp} | Stamina: {orsimer_sta} | Magicka : {orsimer_mp}")
-    x = races['race_mer']['orsimer']['abilities']
+    x = races['race_mer']['orsimer']['ability']
     print(f"Abilities : {x}\n") 
     
     # Argonian race
     print(f"[9] Argonian : text here")
     print(f"Health: {argonian_hp} | Stamina: {argonian_sta} | Magicka : {argonian_mp}")
-    x = races['race_beast']['argonian']['abilities']
+    x = races['race_beast']['argonian']['ability']
     print(f"Abilities : {x}\n") 
     
     print(f"[10] Kahjiit : text here")
     print(f"Health: {kahjiit_hp} | Stamina: {kahjiit_sta} | Magicka : {kahjiit_mp}")
-    x = races['race_beast']['kahjiit']['abilities']
+    x = races['race_beast']['kahjiit']['ability']
     print(f"Abilities : {x}\n") 
     
     print("\n", separator, "\n")
-    
-    while True:
+    print("MAN :    ( | [1] N̲O̲R̲D̲ | [2] I̲M̲P̲E̲R̲I̲A̲L̲ | [3] B̲R̲E̲T̲O̲N̲ | [4] R̲E̲D̲G̲U̲A̲R̲D̲ | )")
+    print("MER :    ( | [5] A̲L̲T̲M̲E̲R̲ | [6] D̲U̲N̲M̲E̲R̲ | [7] B̲O̲S̲M̲E̲R̲ | [8] O̲R̲S̲I̲M̲E̲R̲ | )")
+    print("BEAST :  ( | [9] A̲R̲G̲O̲N̲I̲A̲N̲ | [10] K̲A̲H̲J̲I̲I̲T̲ | )")
+    print("\n", separator, "\n")
+        
+    while True:  
+        print("What is your character's race?")
         user_choice = input("Enter your choice: ")
-            
-            # nord choice
-        if user_choice == "1":
+
+        if user_choice == "1": # nord choice
+            print("\nAre you sure? ( | [1] Y̲E̲S̲ | [2] N̲O̲ | )   *you cannot change this later*")
+            user_choice = input("Enter your choice: ")
+
+            if user_choice == "1":
                 player_stats['player_max_hp'] = races['race_man']['nord']['health']
                 player_stats['player_max_sta'] = races['race_man']['nord']['stamina']
                 player_stats['player_max_mp'] = races['race_man']['nord']['magicka']
-                
                 player_stats['player_race'] = races['race_man']['nord']
+                player_stats["player_ability"] = races['race_man']['nord']['ability']
+                break
                 
-                print(player_stats)
+            elif user_choice == "2":
+                continue
+                            
+        elif user_choice == "2": # imperial choice
+            print("\nAre you sure? ( | [1] Y̲E̲S̲ | [2] N̲O̲ | )   *you cannot change this later*")
+            user_choice = input("Enter your choice: ")
+
+            if user_choice == "1":
+                player_stats['player_max_hp'] = races['race_man']['imperial']['health']
+                player_stats['player_max_sta'] = races['race_man']['imperial']['stamina']
+                player_stats['player_max_mp'] = races['race_man']['imperial']['magicka']
+                player_stats['player_race'] = races['race_man']['imperial']
+                player_stats["player_ability"] = races['race_man']['imperial']['ability']  
+                break
+            
+            elif user_choice == "2":
+                continue
+            
+        elif user_choice == "3": # breton choice
+            print("\nAre you sure? ( | [1] Y̲E̲S̲ | [2] N̲O̲ | )   *you cannot change this later*")
+            user_choice = input("Enter your choice: ")
+
+            if user_choice == "1":
+                player_stats['player_max_hp'] = races['race_man']['breton']['health']
+                player_stats['player_max_sta'] = races['race_man']['breton']['stamina']
+                player_stats['player_max_mp'] = races['race_man']['breton']['magicka']
+                player_stats['player_race'] = races['race_man']['breton']
+                player_stats["player_ability"] = races['race_man']['breton']['ability']  
+                break
+            
+            elif user_choice == "2":
+                continue
+        
+        elif user_choice == "4": # redguard choice
+            print("\nAre you sure? ( | [1] Y̲E̲S̲ | [2] N̲O̲ | )   *you cannot change this later*")
+            
+            user_choice = input("Enter your choice: ")
+
+            if user_choice == "1":
+                player_stats['player_max_hp'] = races['race_man']['redguard']['health']
+                player_stats['player_max_sta'] = races['race_man']['redguard']['stamina']
+                player_stats['player_max_mp'] = races['race_man']['redguard']['magicka']
+                player_stats['player_race'] = races['race_man']['redguard']
+                player_stats["player_ability"] = races['race_man']['redguard']['ability']  
+                break
+            
+            elif user_choice == "2":
+                continue
+            
+        elif user_choice == "5": # altmer choice
+            print("\nAre you sure? ( | [1] Y̲E̲S̲ | [2] N̲O̲ | )   *you cannot change this later*")
+            
+            user_choice = input("Enter your choice: ")
+
+            if user_choice == "1":
+                player_stats['player_max_hp'] = races['race_mer']['altmer']['health']
+                player_stats['player_max_sta'] = races['race_mer']['altmer']['stamina']
+                player_stats['player_max_mp'] = races['race_mer']['altmer']['magicka']
+                player_stats['player_race'] = races['race_mer']['altmer']
+                player_stats["player_ability"] = races['race_mer']['altmer']['ability']  
+                break
+            
+            elif user_choice == "2":
+                continue
+            
+        elif user_choice == "6": # dunmer choice
+            print("\nAre you sure? ( | [1] Y̲E̲S̲ | [2] N̲O̲ | )   *you cannot change this later*")
+            
+            user_choice = input("Enter your choice: ")
+
+            if user_choice == "1":
+                player_stats['player_max_hp'] = races['race_mer']['dunmer']['health']
+                player_stats['player_max_sta'] = races['race_mer']['dunmer']['stamina']
+                player_stats['player_max_mp'] = races['race_mer']['dunmer']['magicka']
+                player_stats['player_race'] = races['race_mer']['dunmer']
+                player_stats["player_ability"] = races['race_mer']['dunmer']['ability']  
+                break
+            
+            elif user_choice == "2":
+                continue
+        
+        elif user_choice == "7": # bosmer choice
+            print("\nAre you sure? ( | [1] Y̲E̲S̲ | [2] N̲O̲ | )   *you cannot change this later*")
+            
+            user_choice = input("Enter your choice: ")
+
+            if user_choice == "1":
+                player_stats['player_max_hp'] = races['race_mer']['bosmer']['health']
+                player_stats['player_max_sta'] = races['race_mer']['bosmer']['stamina']
+                player_stats['player_max_mp'] = races['race_mer']['bosmer']['magicka']
+                player_stats['player_race'] = races['race_mer']['bosmer']
+                player_stats["player_ability"] = races['race_mer']['bosmer']['ability']  
+                break
+
+        elif user_choice == "8": # orsimer choice
+            print("\nAre you sure? ( | [1] Y̲E̲S̲ | [2] N̲O̲ | )   *you cannot change this later*")
+            
+            user_choice = input("Enter your choice: ")
+
+            if user_choice == "1":
+                player_stats['player_max_hp'] = races['race_mer']['orsimer']['health']
+                player_stats['player_max_sta'] = races['race_mer']['orsimer']['stamina']
+                player_stats['player_max_mp'] = races['race_mer']['orsimer']['magicka']
+                player_stats['player_race'] = races['race_mer']['orsimer']
+                player_stats["player_ability"] = races['race_mer']['orsimer']['ability']  
+                break
+            
+            elif user_choice == "2":
+                continue
+
+        elif user_choice == "9": # argonian choice
+            print("\nAre you sure? ( | [1] Y̲E̲S̲ | [2] N̲O̲ | )   *you cannot change this later*")
+            
+            user_choice = input("Enter your choice: ")
+
+            if user_choice == "1":
+                player_stats['player_max_hp'] = races['race_beast']['argonian']['health']
+                player_stats['player_max_sta'] = races['race_beast']['argonian']['stamina']
+                player_stats['player_max_mp'] = races['race_beast']['argonian']['magicka']
+                player_stats['player_race'] = races['race_beast']['argonian']
+                player_stats["player_ability"] = races['race_beast']['argonian']['ability']  
+                break
+            
+            elif user_choice == "2":
+                continue
+            
+        elif user_choice == "10": # kahjiit choice
+            print("\nAre you sure? ( | [1] Y̲E̲S̲ | [2] N̲O̲ | )   *you cannot change this later*")
+            
+            user_choice = input("Enter your choice: ")
+
+            if user_choice == "1":
+                player_stats['player_max_hp'] = races['race_beast']['kahjiit']['health']
+                player_stats['player_max_sta'] = races['race_beast']['kahjiit']['stamina']
+                player_stats['player_max_mp'] = races['race_beast']['kahjiit']['magicka']
+                player_stats['player_race'] = races['race_beast']['kahjiit']
+                player_stats["player_ability"] = races['race_beast']['kahjiit']['ability']  
+                break
+            
+            elif user_choice == "2":
+                continue
+
+    print("\n", separator, "\n")
+    print("                                           ( |  CHARACTER NAME  | )")
+    
+    while True:
+        x = input("\nWhat is your character's name? ")
+        print("\nAre you sure? ( | [1] Y̲E̲S̲ | [2] N̲O̲ | )   *you cannot change this later*")
+        user_choice = input("Enter your choice: ")
+        if user_choice == "1":
+            player_stats['player_name'] == x
+            break
+                        
+        elif user_choice == "2":
+            continue 
+
                 
 # !!! Gameplay Menus !!!               
 # displays the current actions a user can do
@@ -669,7 +835,7 @@ def opening_scene_p2():
 #opening_scene_p2()
 #display_status()
 #action_screen()
-character_creation_gender()
+character_creation()
 
 
 #main_menu_visual()
