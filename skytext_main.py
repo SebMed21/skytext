@@ -854,14 +854,133 @@ def execution_scene():
         if player_stats['player_race'] == "nord":
             
             dialogue =  "-> You tell the imperial soldier with a ledger who you are.\n"\
-                            "-> The imperial soldier remarks your race and origin and wonders about your identity.\n"\
-            
+                        "-> The imperial soldier remarks your race and origin and wonders about your identity.\n\n"\
+                        " > Imperial Soldier : You picked a bad time to come home to Skyrim, kinsman.\n"\
+                         
             for i in dialogue:
                 sys.stdout.write(i)
                 sys.stdout.flush()
                 time.sleep(read_speed)
+                            
+                break
             
-            break
+        elif player_stats['player_race'] == "imperial":
+            
+            dialogue =  "-> You tell the imperial soldier with a ledger who you are.\n"\
+                        "-> The imperial soldier remarks your race and origin and wonders about your identity.\n\n"\
+                        " > Imperial Soldier : You're a long way from the Imperial City. What're you doing in Skyrim?.\n"\
+                         
+            for i in dialogue:
+                sys.stdout.write(i)
+                sys.stdout.flush()
+                time.sleep(read_speed)
+                            
+                break
+            
+        elif player_stats['player_race'] == "breton":
+                
+            dialogue =  "-> You tell the imperial soldier with a ledger who you are.\n"\
+                        "-> The imperial soldier remarks your race and origin and wonders about your identity.\n\n"\
+                        " > Imperial Soldier : You from Daggerfall, Breton? Fleeing from some court intrigue?.\n"\
+                            
+            for i in dialogue:
+                sys.stdout.write(i)
+                sys.stdout.flush()
+                time.sleep(read_speed)
+                                
+                break
+                
+        elif player_stats['player_race'] == "redguard":
+                
+            dialogue =  "-> You tell the imperial soldier with a ledger who you are.\n"\
+                        "-> The imperial soldier remarks your race and origin and wonders about your identity.\n\n"\
+                        " > Imperial Soldier : What're you doing here, Redguard? You a sellsword? A sailor from Stros M'Kai?.\n"\
+                            
+            for i in dialogue:
+                sys.stdout.write(i)
+                sys.stdout.flush()
+                time.sleep(read_speed)
+                                
+                break
+       
+        elif player_stats['player_race'] == "altmer":
+                
+            dialogue =  "-> You tell the imperial soldier with a ledger who you are.\n"\
+                        "-> The imperial soldier remarks your race and origin and wonders about your identity.\n\n"\
+                        " > Imperial Soldier : You're not with the Thalmor Embassy, are you, high elf? No, that can't be right....\n"\
+                            
+            for i in dialogue:
+                sys.stdout.write(i)
+                sys.stdout.flush()
+                time.sleep(read_speed)
+                                
+                break
+            
+        elif player_stats['player_race'] == "dunmer":
+                
+            dialogue =  "-> You tell the imperial soldier with a ledger who you are.\n"\
+                        "-> The imperial soldier remarks your race and origin and wonders about your identity.\n\n"\
+                        " > Imperial Soldier : Another refugee? Gods really have abandoned your people, dark elf.\n"\
+                            
+            for i in dialogue:
+                sys.stdout.write(i)
+                sys.stdout.flush()
+                time.sleep(read_speed)
+                                
+                break 
+        
+        elif player_stats['player_race'] == "bosmer":
+                
+            dialogue =  "-> You tell the imperial soldier with a ledger who you are.\n"\
+                        "-> The imperial soldier remarks your race and origin and wonders about your identity.\n\n"\
+                        " > Imperial Soldier : Not many wood elves would choose to come alone to Skyrim.\n"\
+                            
+            for i in dialogue:
+                sys.stdout.write(i)
+                sys.stdout.flush()
+                time.sleep(read_speed)
+                                
+                break  
+            
+        elif player_stats['player_race'] == "orsimer":
+                
+            dialogue =  "-> You tell the imperial soldier with a ledger who you are.\n"\
+                        "-> The imperial soldier remarks your race and origin and wonders about your identity.\n\n"\
+                        " > Imperial Soldier : You from one of the strongholds, Orc? How did you end up here?\n"\
+                            
+            for i in dialogue:
+                sys.stdout.write(i)
+                sys.stdout.flush()
+                time.sleep(read_speed)
+                                
+                break     
+
+        elif player_stats['player_race'] == "argonian":
+                
+            dialogue =  "-> You tell the imperial soldier with a ledger who you are.\n"\
+                        "-> The imperial soldier remarks your race and origin and wonders about your identity.\n\n"\
+                        " > Imperial Soldier : Are you a relative of one of the Riften dock workers, Argonian?\n"\
+                            
+            for i in dialogue:
+                sys.stdout.write(i)
+                sys.stdout.flush()
+                time.sleep(read_speed)
+                                
+                break 
+            
+        elif player_stats['player_race'] == "kahjiit":
+                
+            dialogue =  "-> You tell the imperial soldier with a ledger who you are.\n"\
+                        "-> The imperial soldier remarks your race and origin and wonders about your identity.\n\n"\
+                        " > Imperial Soldier : Are you a relative of one of the Riften dock workers, Argonian?\n"\
+                            
+            for i in dialogue:
+                sys.stdout.write(i)
+                sys.stdout.flush()
+                time.sleep(read_speed)
+                                
+                break 
+    
                     
 # program launch into main menu
 #opening_scene_p1()
