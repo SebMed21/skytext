@@ -17,8 +17,8 @@ player_stats = {
     'player_experience'         : 0,
     'player_level'              : 1,  
     # character creation
-    'player_gender'             : "",
-    'player_race'               : "",
+    'player_gender'             : "male", # default gender
+    'player_race'               : "nord", # default race
     # other
     'player_ability'            : ""
       
@@ -46,7 +46,6 @@ helmet = {}
 body = {}
 gloves = {}
 boots = {}
-
 magic  = {}
 
 # things for character customization
@@ -146,7 +145,7 @@ races = {
 separator = "================================================================================================================="
     # print("\n", separator, "\n")
     # user_choice = input("Enter your choice: ")
-
+    
 read_speed = 0.0001 # default speed of text that can be changed in the settings
 
 # displays the opening main menu for the game 
@@ -272,7 +271,7 @@ def character_creation():
             user_choice = input("Enter your choice: ")
 
             if user_choice == "1":
-                player_stats['player_gender'] = "Male"
+                player_stats['player_gender'] = "male"
                 break
                 
             elif user_choice == "2":
@@ -286,12 +285,12 @@ def character_creation():
             user_choice = input("Enter your choice: ")
 
             if user_choice == "1":
-                player_stats['player_gender'] = "Female"
+                player_stats['player_gender'] = "female"
                 break
                     
             elif user_choice == "2":
-                continue 
-            
+                continue      
+           
     print("\n", separator, "\n")
     
     print("                                           ( |  CHARACTER RACE  | )\n")
@@ -805,9 +804,10 @@ def opening_scene_p2():
                 " > Stormcloak Soldier : Empire loves their damn lists.\n"\
                 " > Imperial Soldier : Ulfric Stormcloak. Jarl of Windhelm.\n"\
                 " > Stormcloak Soldier : It has been an honor Jarl Ulfric!\n"\
-                " > Imperial Soldier : Ralof of Riverwood.\n"\
+                " > Imperial Soldier : Ralof of Riverwood.\n\n"\
+                "-> You learn that the name of Stormcloak Soldier in your carriage is Ralof.\n\n"\
                 " > Imperial Soldier : Lokir of Rorikstead.\n\n"\
-                "-> It seems that the Horse Thief's name was Lokir..\n"\
+                "-> It seems that the Horse Thief's name is Lokir..\n"\
                 "-> As the others make their way to the block. Lokir made a run for his life.\n\n"\
                 " > Lokir : You're not going to kill me!\n"\
                 " > Imperial Captain : Archers!\n\n"\
@@ -853,126 +853,214 @@ def execution_scene():
     print("\n", separator, "\n")
         
     # special dialogue for the player's race
-    if player_stats['player_race'] == "nord": # dialogue for nord and so on
+    if player_stats['player_race'] == "nord":
             
-            dialogue =  "-> You tell the imperial soldier with a ledger who you are.\n"\
-                        "-> The imperial soldier remarks your race and origin and wonders about your identity.\n\n"\
-                        " > Imperial Soldier : You picked a bad time to come home to Skyrim, kinsman.\n"\
-                         
-            for i in dialogue:
-                sys.stdout.write(i)
-                sys.stdout.flush()
-                time.sleep(read_speed)
+        dialogue =  "-> You tell the imperial soldier with a ledger who you are.\n"\
+                    "-> The imperial soldier remarks your race and origin and wonders about your identity.\n\n"\
+                    " > Imperial Soldier : You picked a bad time to come home to Skyrim, kinsman.\n"\
+                        
+        for i in dialogue:
+            sys.stdout.write(i)
+            sys.stdout.flush()
+            time.sleep(read_speed)
             
-    elif player_stats['player_race'] == "imperial": 
+    elif player_stats['player_race'] == "imperial":
             
-            dialogue =  "-> You tell the imperial soldier with a ledger who you are.\n"\
-                        "-> The imperial soldier remarks your race and origin and wonders about your identity.\n\n"\
-                        " > Imperial Soldier : You're a long way from the Imperial City. What're you doing in Skyrim?.\n"\
-                         
-            for i in dialogue:
-                sys.stdout.write(i)
-                sys.stdout.flush()
-                time.sleep(read_speed)
+        dialogue =  "-> You tell the imperial soldier with a ledger who you are.\n"\
+                    "-> The imperial soldier remarks your race and origin and wonders about your identity.\n\n"\
+                    " > Imperial Soldier : You're a long way from the Imperial City. What're you doing in Skyrim?.\n"\
+                        
+        for i in dialogue:
+            sys.stdout.write(i)
+            sys.stdout.flush()
+            time.sleep(read_speed)
                         
     elif player_stats['player_race'] == "breton":
                 
-            dialogue =  "-> You tell the imperial soldier with a ledger who you are.\n"\
-                        "-> The imperial soldier remarks your race and origin and wonders about your identity.\n\n"\
-                        " > Imperial Soldier : You from Daggerfall, Breton? Fleeing from some court intrigue?.\n"\
-                            
-            for i in dialogue:
-                sys.stdout.write(i)
-                sys.stdout.flush()
-                time.sleep(read_speed)
+        dialogue =  "-> You tell the imperial soldier with a ledger who you are.\n"\
+                    "-> The imperial soldier remarks your race and origin and wonders about your identity.\n\n"\
+                    " > Imperial Soldier : You from Daggerfall, Breton? Fleeing from some court intrigue?.\n"\
+                        
+        for i in dialogue:
+            sys.stdout.write(i)
+            sys.stdout.flush()
+            time.sleep(read_speed)
                       
     elif player_stats['player_race'] == "redguard":
                 
-            dialogue =  "-> You tell the imperial soldier with a ledger who you are.\n"\
-                        "-> The imperial soldier remarks your race and origin and wonders about your identity.\n\n"\
-                        " > Imperial Soldier : What're you doing here, Redguard? You a sellsword? A sailor from Stros M'Kai?.\n"\
-                            
-            for i in dialogue:
-                sys.stdout.write(i)
-                sys.stdout.flush()
-                time.sleep(read_speed)
+        dialogue =  "-> You tell the imperial soldier with a ledger who you are.\n"\
+                    "-> The imperial soldier remarks your race and origin and wonders about your identity.\n\n"\
+                    " > Imperial Soldier : What're you doing here, Redguard? You a sellsword? A sailor from Stros M'Kai?.\n"\
+                        
+        for i in dialogue:
+            sys.stdout.write(i)
+            sys.stdout.flush()
+            time.sleep(read_speed)
                                  
     elif player_stats['player_race'] == "altmer":
                 
-            dialogue =  "-> You tell the imperial soldier with a ledger who you are.\n"\
-                        "-> The imperial soldier remarks your race and origin and wonders about your identity.\n\n"\
-                        " > Imperial Soldier : You're not with the Thalmor Embassy, are you, high elf? No, that can't be right....\n"\
-                            
-            for i in dialogue:
-                sys.stdout.write(i)
-                sys.stdout.flush()
-                time.sleep(read_speed)
+        dialogue =  "-> You tell the imperial soldier with a ledger who you are.\n"\
+                    "-> The imperial soldier remarks your race and origin and wonders about your identity.\n\n"\
+                    " > Imperial Soldier : You're not with the Thalmor Embassy, are you, high elf? No, that can't be right....\n"\
+                        
+        for i in dialogue:
+            sys.stdout.write(i)
+            sys.stdout.flush()
+            time.sleep(read_speed)
                                         
     elif player_stats['player_race'] == "dunmer":
                 
-            dialogue =  "-> You tell the imperial soldier with a ledger who you are.\n"\
-                        "-> The imperial soldier remarks your race and origin and wonders about your identity.\n\n"\
-                        " > Imperial Soldier : Another refugee? Gods really have abandoned your people, dark elf.\n"\
-                            
-            for i in dialogue:
-                sys.stdout.write(i)
-                sys.stdout.flush()
-                time.sleep(read_speed)
-                                
-                break 
-        
+        dialogue =  "-> You tell the imperial soldier with a ledger who you are.\n"\
+                    "-> The imperial soldier remarks your race and origin and wonders about your identity.\n\n"\
+                    " > Imperial Soldier : Another refugee? Gods really have abandoned your people, dark elf.\n"\
+                        
+        for i in dialogue:
+            sys.stdout.write(i)
+            sys.stdout.flush()
+            time.sleep(read_speed)
+                                        
     elif player_stats['player_race'] == "bosmer":
                 
-            dialogue =  "-> You tell the imperial soldier with a ledger who you are.\n"\
-                        "-> The imperial soldier remarks your race and origin and wonders about your identity.\n\n"\
-                        " > Imperial Soldier : Not many wood elves would choose to come alone to Skyrim.\n"\
-                            
-            for i in dialogue:
-                sys.stdout.write(i)
-                sys.stdout.flush()
-                time.sleep(read_speed)
+        dialogue =  "-> You tell the imperial soldier with a ledger who you are.\n"\
+                    "-> The imperial soldier remarks your race and origin and wonders about your identity.\n\n"\
+                    " > Imperial Soldier : Not many wood elves would choose to come alone to Skyrim.\n"\
+                        
+        for i in dialogue:
+            sys.stdout.write(i)
+            sys.stdout.flush()
+            time.sleep(read_speed)
                                         
     elif player_stats['player_race'] == "orsimer":
                 
-            dialogue =  "-> You tell the imperial soldier with a ledger who you are.\n"\
-                        "-> The imperial soldier remarks your race and origin and wonders about your identity.\n\n"\
-                        " > Imperial Soldier : You from one of the strongholds, Orc? How did you end up here?\n"\
-                            
-            for i in dialogue:
-                sys.stdout.write(i)
-                sys.stdout.flush()
-                time.sleep(read_speed)
+        dialogue =  "-> You tell the imperial soldier with a ledger who you are.\n"\
+                    "-> The imperial soldier remarks your race and origin and wonders about your identity.\n\n"\
+                    " > Imperial Soldier : You from one of the strongholds, Orc? How did you end up here?\n"\
+                        
+        for i in dialogue:
+            sys.stdout.write(i)
+            sys.stdout.flush()
+            time.sleep(read_speed)
                                    
     elif player_stats['player_race'] == "argonian":
                 
-            dialogue =  "-> You tell the imperial soldier with a ledger who you are.\n"\
-                        "-> The imperial soldier remarks your race and origin and wonders about your identity.\n\n"\
-                        " > Imperial Soldier : Are you a relative of one of the Riften dock workers, Argonian?\n"\
-                            
-            for i in dialogue:
-                sys.stdout.write(i)
-                sys.stdout.flush()
-                time.sleep(read_speed)
-                      
-                      
+        dialogue =  "-> You tell the imperial soldier with a ledger who you are.\n"\
+                    "-> The imperial soldier remarks your race and origin and wonders about your identity.\n\n"\
+                    " > Imperial Soldier : Are you a relative of one of the Riften dock workers, Argonian?\n"\
+                        
+        for i in dialogue:
+            sys.stdout.write(i)
+            sys.stdout.flush()
+            time.sleep(read_speed)
+                                            
     elif player_stats['player_race'] == "kahjiit":
                 
-            dialogue =  "-> You tell the imperial soldier with a ledger who you are.\n"\
-                        "-> The imperial soldier remarks your race and origin and wonders about your identity.\n\n"\
-                        " > Imperial Soldier : Are you a relative of one of the Riften dock workers, Argonian?\n"\
+        dialogue =  "-> You tell the imperial soldier with a ledger who you are.\n"\
+                    "-> The imperial soldier remarks your race and origin and wonders about your identity.\n\n"\
+                    " > Imperial Soldier : Are you a relative of one of the Riften dock workers, Argonian?\n"\
                             
-            for i in dialogue:
-                sys.stdout.write(i)
-                sys.stdout.flush()
-                time.sleep(read_speed)
-                                     
+        for i in dialogue:
+            sys.stdout.write(i)
+            sys.stdout.flush()
+            time.sleep(read_speed)
+    
+    # pronouns to be used for the dialogue
+    
+    if player_stats['player_gender'] == "male":
+        x = "he"
+    elif player_stats['player_gender'] == "female":
+        x = "she"
+    
+    dialogue =  f" > Imperial Soldier : Captain. What should we do? {x.title()}'s not on the list.\n"\
+                f" > Imperial Captain : Forget the list. {x.title()} goes to the block.\n"\
+                " > Imperial Soldier : By your orders, Captain. Follow the Captain, prisoner.\n\n"\
+                "-> You follow the Imperial Captain and walks towards the block.\n"\
+                "-> You see the other prisoners lined with Ulfric Stormcloak at the forefront.\n\n"\
+                " > General Tullius : Ulfric Stormcloak. Some here in Helgen call you a hero. But a hero doesn't use the a power like 𝘛𝘩𝘦 𝘝𝘰𝘪𝘤𝘦 to murder his king and usurp his throne.\n"\
+                " > Ulfric Stormcloak : *muffled grunts*\n"\
+                " > General Tullius : You started this war, plunged Skyrim into chaos, and now the Empire is going to put you down, and restore the peace.\n\n"\
+                "-> You hear a roar in the distance, drawing the attention of everyone gathered around the execution block, but the soldiers think little of it.\n\n"\
+                " > Imperial Soldier : What was that?\n"\
+                " > General Tullius : It's nothing. Carry on.\n"\
+                " > Imperial Captain : Yes General Tullius. Give them their last rites.\n\n"\
+                "-> A priest walks up to the center of the scene and starts praying.\n\n"\
+                " > Priestess of Arkay : As we commend your souls to Aetherius, blessings of the Eight Divines upon you, for you are the salt and the earth of Nirn, our beloved--\n\n"\
+                "-> A prisoner wearing the same armor as the Stormcloak Soldier in your carriage interrupted the priestess.\n"\
+                "-> The prisoner walked up to the execution block while exclaiming.\n\n"\
+                " > Stormcloak Soldier : For the love of Talos, shut up and let's get this over with.\n"\
+                " > Priestess of Arkay : As you wish.\n\n"\
+                "-> The soldier is then helped by the captain into the chopping block.\n"\
+                "-> You see a man in black garb with his face covered holding an axe with an obscenely large blade.\n"\
+                "-> The Executioner prepares to swing.\n\n"\
+                " > Stormcloak Soldier : Come on, I haven't got all morning.\n"\
+                " > Stormcloak Soldier : My ancestors are smiling at me, Imperials. Can you say the same?\n\n"\
+                "-> With those last defiant words to Tullius, the Imperial Captain, and the Legionnaires, the Stormcloak Soldier is beheaded by the executioner.\n"\
+                "-> The Imperial Captain then shoves his lifeless body off to the side of the chopping block.\n\n"\
+                "-> Opinions begin to form within the crowd.\n"\
+                " > Stormcloak Soldier : You Imperial bastards!\n"\
+                " > Female Citizen : Justice!.\n"\
+                " > Old Woman : Death to the Stormcloaks!.\n\n"\
+                
+    for i in dialogue:
+        sys.stdout.write(i)
+        sys.stdout.flush()
+        time.sleep(read_speed)
+    
+    
+    # special dialogue for player race
+        
+    if player_stats['player_race'] == "nord":
+        
+        dialogue = " > Imperial Captain : Next, the nord in the rags!"
+        
+        for i in dialogue:
+            sys.stdout.write(i)
+            sys.stdout.flush()
+            time.sleep(read_speed)
+        
+    elif player_stats['player_race'] == "imperial":
+                
+        dialogue = " > Imperial Captain : Next, the renegade from Cyrodiil!"
+        
+        for i in dialogue:
+            sys.stdout.write(i)
+            sys.stdout.flush()
+            time.sleep(read_speed)
+                   
+    elif player_stats['player_race'] == "argonian":
+        
+        dialogue = " > Imperial Captain : Next, the lizard!"
+        
+        for i in dialogue:
+            sys.stdout.write(i)
+            sys.stdout.flush()
+            time.sleep(read_speed)
+        
+    elif player_stats['player_race'] == "kahjiit":
+        
+        dialogue = " > Imperial Captain : Next, the cat!!"
+        
+        for i in dialogue:
+            sys.stdout.write(i)
+            sys.stdout.flush()
+            time.sleep(read_speed)
+            
+    else:
+        
+        dialogue = f" > Imperial Captain : Next, the {player_stats['player_race']}!"
+        
+        for i in dialogue:
+            sys.stdout.write(i)
+            sys.stdout.flush()
+            time.sleep(read_speed)
+        
+                                        
 # program launch into main menu
 #opening_scene_p1()
 #opening_scene_p2()
-#execution_scene()
+execution_scene()
 #display_status()
 #action_screen()
-character_creation()
+#character_creation()
 
 
 #main_menu_visual()
