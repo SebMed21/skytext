@@ -1057,11 +1057,10 @@ def execution_scene():
 # program launch into main menu
 #opening_scene_p1()
 #opening_scene_p2()
-execution_scene()
+#execution_scene()
 #display_status()
 #action_screen()
 #character_creation()
 
-
-#main_menu_visual()
-#main_menu_function()
+main_menu_visual()
+main_menu_function()
