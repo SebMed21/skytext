@@ -49,7 +49,6 @@ boots = {}
 magic  = {}
 
 # things for character customization
-
 # possible character races with abilities 
 races = { 
         'race_man': { 
@@ -146,7 +145,7 @@ separator = "===================================================================
     # print("\n", separator, "\n")
     # user_choice = input("Enter your choice: ")
     
-read_speed = 0.0001 # default speed of text that can be changed in the settings
+read_speed = 0 # default speed of text that can be changed in the settings
 
 # displays the opening main menu for the game 
 def main_menu_visual():
@@ -180,8 +179,6 @@ def main_menu_visual():
     print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⣿⣿⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
     print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
     print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
-    
-    
     print("\n", separator, "\n")
 
 # functionality of the main menu to start the game or access the other menus
@@ -258,7 +255,6 @@ def character_creation():
     print("                                         ( |  CHARACTER CREATION  | )")     
     print("\n", separator, "\n")               
     print("                                          ( |  CHARACTER GENDER  | )")
-   
     while True:
         print("\nWhat is your character's gender? ( | [1] M̲A̲L̲E̲ | [2] F̲E̲M̲A̲L̲E̲ | )")
         user_choice = input("Enter your choice: ")
@@ -290,7 +286,6 @@ def character_creation():
                     
             elif user_choice == "2":
                 continue      
-           
     print("\n", separator, "\n")
     
     print("                                           ( |  CHARACTER RACE  | )\n")
@@ -533,7 +528,7 @@ def character_creation():
             continue
     
     print("\n", separator, "\n")  
-      
+ 
     execution_scene()
                 
 # !!! Gameplay Menus !!!               
@@ -964,7 +959,6 @@ def execution_scene():
             time.sleep(read_speed)
     
     # pronouns to be used for the dialogue
-    
     if player_stats['player_gender'] == "male":
         x = "he"
     elif player_stats['player_gender'] == "female":
@@ -990,27 +984,26 @@ def execution_scene():
                 " > Priestess of Arkay : As you wish.\n\n"\
                 "-> The soldier is then helped by the captain into the chopping block.\n"\
                 "-> You see a man in black garb with his face covered holding an axe with an obscenely large blade.\n"\
-                "-> The Executioner prepares to swing.\n\n"\
+                "-> The headsman prepares to swing.\n\n"\
                 " > Stormcloak Soldier : Come on, I haven't got all morning.\n"\
                 " > Stormcloak Soldier : My ancestors are smiling at me, Imperials. Can you say the same?\n\n"\
-                "-> With those last defiant words to Tullius, the Imperial Captain, and the Legionnaires, the Stormcloak Soldier is beheaded by the executioner.\n"\
+                "-> With those last defiant words to Tullius, the Imperial Captain, and the Legionnaires, the Stormcloak Soldier is beheaded by the headsman.\n"\
                 "-> The Imperial Captain then shoves his lifeless body off to the side of the chopping block.\n\n"\
-                "-> Opinions begin to form within the crowd.\n"\
+                "-> Differing opinions about the execution of the rebels began to form within the crowd.\n"\
                 " > Stormcloak Soldier : You Imperial bastards!\n"\
                 " > Female Citizen : Justice!.\n"\
                 " > Old Woman : Death to the Stormcloaks!.\n\n"\
+                "-> The imperials seem to be ignoring the opinions and continues on with the executions.\n\n"
                 
     for i in dialogue:
         sys.stdout.write(i)
         sys.stdout.flush()
         time.sleep(read_speed)
-    
-    
-    # special dialogue for player race
-        
+           
+    # special dialogue for player race        
     if player_stats['player_race'] == "nord":
         
-        dialogue = " > Imperial Captain : Next, the nord in the rags!"
+        dialogue =  " > Imperial Captain : Next, the nord in the rags!\n\n"
         
         for i in dialogue:
             sys.stdout.write(i)
@@ -1019,7 +1012,7 @@ def execution_scene():
         
     elif player_stats['player_race'] == "imperial":
                 
-        dialogue = " > Imperial Captain : Next, the renegade from Cyrodiil!"
+        dialogue = " > Imperial Captain : Next, the renegade from Cyrodiil!\n\n"
         
         for i in dialogue:
             sys.stdout.write(i)
@@ -1028,7 +1021,7 @@ def execution_scene():
                    
     elif player_stats['player_race'] == "argonian":
         
-        dialogue = " > Imperial Captain : Next, the lizard!"
+        dialogue = " > Imperial Captain : Next, the lizard!\n\n"
         
         for i in dialogue:
             sys.stdout.write(i)
@@ -1037,7 +1030,7 @@ def execution_scene():
         
     elif player_stats['player_race'] == "kahjiit":
         
-        dialogue = " > Imperial Captain : Next, the cat!!"
+        dialogue = " > Imperial Captain : Next, the cat!!\n\n"
         
         for i in dialogue:
             sys.stdout.write(i)
@@ -1046,21 +1039,95 @@ def execution_scene():
             
     else:
         
-        dialogue = f" > Imperial Captain : Next, the {player_stats['player_race']}!"
+        dialogue = f" > Imperial Captain : Next, the {player_stats['player_race']}!\n\n"
         
         for i in dialogue:
             sys.stdout.write(i)
             sys.stdout.flush()
             time.sleep(read_speed)
+    
+    dialogue =  "-> You hear another roar from the distance...\n\n"\
+                " > Imperial Soldier : There it is again. Do you hear that?\n"\
+                " > Imperial Captain : I said, next prisoner!\n"\
+                " > Imperial Soldier : To the block prisoner, nice and easy.\n"\
+
+    
+    #proceeds to next scene
+    alduin_helgen_attack()
+
+def alduin_helgen_attack():  
+    print("\n", separator, "\n")
         
-                                        
+    dialogue =  "-> You follow the captain's orders and walk to the block.\n"\
+                "-> As you lay on your knees with your neck on the block.\n"\
+                "-> The headsman lifts his axe over his head and prepares to swing.\n"\
+                "-> You leave yourself to fate and wait....\n\n"\
+                ".\n"\
+                ".\n"\
+                ".\n"\
+                ".\n\n"\
+                "-> You wait for your head to be lobbed off...\n\n"\
+                ".\n"\
+                ".\n"\
+                ".\n"\
+                ".\n\n"\
+                "-> Nothing happens...\n\n"\
+                ".\n"\
+                ".\n"\
+                ".\n"\
+                ".\n\n"\
+                "-> You hear the deafening roar passing by the sky overhead.\n"\
+                "-> You see a massive black silhouette in your view flying by the clouds.\n\n"\
+                " > General Tullius : What in Oblivion is that!?\n"\
+                " > Imperial Captain : Sentries! What do you see?!\n"\
+                " > Imperial Soldier : It's in the clouds!\n\n"\
+                "-> The dark silhouette soars overhead, descending atop the stone keep before you.\n"\
+                "-> Weapons are drawn as every eye turns toward the colossal creature.\n"\
+                "-> Its wings stretch wide enough to shroud the sky, its scales gleam like polished obsidian, and its gaping maw looks capable of tearing a man in two.\n\n"\
+                " > Stormcloak Soldier : DRAGON!!!!.\n\n"\
+                "-> The dragon unleashes a deafening roar.\n"\
+                "-> The skies twist and clouds contort into unnatural shapes.\n"\
+                "-> Rocks start raining down from the sky.\n"\
+                "-> The headsman stumbles and loses balance.\n"\
+                "-> The black dragon shouts. Its earth-shaking voice reverberating through the surroundings\n"\
+                "-> The headsman is killed, and a powerful Unrelenting Force hurls you backward.\n"\
+                " > Black Dragon : FUS.... RO..... DAH!!\n\n"\
+                " > General Tullius : Don't just stand there! Kill that thing!\n"\
+                " > Imperial Soldier : Move! Move!\n"\
+                " > General Tullius : Guards, get the townspeople to safety!\n"\
+                " > Imperial Soldier : Gods, what does it take to kill that thing!\n\n"\
+                "-> Your head feels unsteady. As you attempt to gather yourself, a familiar voice calls out to you.\n\n"\
+            
+    for i in dialogue:
+        sys.stdout.write(i)
+        sys.stdout.flush()
+        time.sleep(read_speed)
+        
+    # special race dialogue from Ralof     
+    if player_stats['player_race'] == 'nord': # dialogue of the playerrace is a nord
+        dialogue =    " > Ralof : Hey, kinsman!\n"\
+                        " > Ralof : Get up! Come on, the gods won't give us another chance!\n\n"\
+    
+    else: # dialogue for every other race
+        dialogue =    f" > Ralof : Hey, {player_stats['player_race'].title()}.\n"\
+                        " > Ralof : Get up! Come on, the gods won't give us another chance!\n\n"\
+                            
+    for i in dialogue:
+        sys.stdout.write(i)
+        sys.stdout.flush()
+        time.sleep(read_speed)
+        
+    print("\n", separator, "\n")
+                       
 # program launch into main menu
 #opening_scene_p1()
 #opening_scene_p2()
 #execution_scene()
+alduin_helgen_attack()
+
 #display_status()
 #action_screen()
 #character_creation()
 
-main_menu_visual()
-main_menu_function()
+#main_menu_visual()
+#main_menu_function()
