@@ -184,7 +184,7 @@ def main_menu_visual():
 # functionality of the main menu to start the game or access the other menus
 def main_menu_function():
     while True:
-        user_choice = input("Enter your choice: ") 
+        user_choice = input("\nEnter your choice: ") 
         print("\n", separator, "\n")
         
         # user wishes to start a new game save
@@ -257,14 +257,14 @@ def character_creation():
     print("                                          ( |  CHARACTER GENDER  | )")
     while True:
         print("\nWhat is your character's gender? ( | [1] M̲A̲L̲E̲ | [2] F̲E̲M̲A̲L̲E̲ | )")
-        user_choice = input("Enter your choice: ")
+        user_choice = input("\nEnter your choice: ")
             
             # Male choice
         if user_choice == "1":
                 
             print("\nAre you sure? ( | [1] Y̲E̲S̲ | [2] N̲O̲ | )   *you cannot change this later*")
 
-            user_choice = input("Enter your choice: ")
+            user_choice = input("\nEnter your choice: ")
 
             if user_choice == "1":
                 player_stats['player_gender'] = "male"
@@ -278,7 +278,7 @@ def character_creation():
                 
             print("\nAre you sure? ( | [1] Y̲E̲S̲ | [2] N̲O̲ | )   *you cannot change this later*")
 
-            user_choice = input("Enter your choice: ")
+            user_choice = input("\nEnter your choice: ")
 
             if user_choice == "1":
                 player_stats['player_gender'] = "female"
@@ -357,11 +357,11 @@ def character_creation():
         
     while True:  
         print("What is your character's race?")
-        user_choice = input("Enter your choice: ")
+        user_choice = input("\nEnter your choice: ")
 
         if user_choice == "1": # nord choice
             print("\nAre you sure? ( | [1] Y̲E̲S̲ | [2] N̲O̲ | )   *you cannot change this later*")
-            user_choice = input("Enter your choice: ")
+            user_choice = input("\nEnter your choice: ")
 
             if user_choice == "1":
                 player_stats['player_max_hp'] = races['race_man']['nord']['health']
@@ -376,7 +376,7 @@ def character_creation():
                             
         elif user_choice == "2": # imperial choice
             print("\nAre you sure? ( | [1] Y̲E̲S̲ | [2] N̲O̲ | )   *you cannot change this later*")
-            user_choice = input("Enter your choice: ")
+            user_choice = input("\nEnter your choice: ")
 
             if user_choice == "1":
                 player_stats['player_max_hp'] = races['race_man']['imperial']['health']
@@ -391,7 +391,7 @@ def character_creation():
             
         elif user_choice == "3": # breton choice
             print("\nAre you sure? ( | [1] Y̲E̲S̲ | [2] N̲O̲ | )   *you cannot change this later*")
-            user_choice = input("Enter your choice: ")
+            user_choice = input("\nEnter your choice: ")
 
             if user_choice == "1":
                 player_stats['player_max_hp'] = races['race_man']['breton']['health']
@@ -407,7 +407,7 @@ def character_creation():
         elif user_choice == "4": # redguard choice
             print("\nAre you sure? ( | [1] Y̲E̲S̲ | [2] N̲O̲ | )   *you cannot change this later*")
             
-            user_choice = input("Enter your choice: ")
+            user_choice = input("\nEnter your choice: ")
 
             if user_choice == "1":
                 player_stats['player_max_hp'] = races['race_man']['redguard']['health']
@@ -423,7 +423,7 @@ def character_creation():
         elif user_choice == "5": # altmer choice
             print("\nAre you sure? ( | [1] Y̲E̲S̲ | [2] N̲O̲ | )   *you cannot change this later*")
             
-            user_choice = input("Enter your choice: ")
+            user_choice = input("\nEnter your choice: ")
 
             if user_choice == "1":
                 player_stats['player_max_hp'] = races['race_mer']['altmer']['health']
@@ -439,7 +439,7 @@ def character_creation():
         elif user_choice == "6": # dunmer choice
             print("\nAre you sure? ( | [1] Y̲E̲S̲ | [2] N̲O̲ | )   *you cannot change this later*")
             
-            user_choice = input("Enter your choice: ")
+            user_choice = input("\nEnter your choice: ")
 
             if user_choice == "1":
                 player_stats['player_max_hp'] = races['race_mer']['dunmer']['health']
@@ -455,7 +455,7 @@ def character_creation():
         elif user_choice == "7": # bosmer choice
             print("\nAre you sure? ( | [1] Y̲E̲S̲ | [2] N̲O̲ | )   *you cannot change this later*")
             
-            user_choice = input("Enter your choice: ")
+            user_choice = input("\nEnter your choice: ")
 
             if user_choice == "1":
                 player_stats['player_max_hp'] = races['race_mer']['bosmer']['health']
@@ -468,7 +468,7 @@ def character_creation():
         elif user_choice == "8": # orsimer choice
             print("\nAre you sure? ( | [1] Y̲E̲S̲ | [2] N̲O̲ | )   *you cannot change this later*")
             
-            user_choice = input("Enter your choice: ")
+            user_choice = input("\nEnter your choice: ")
 
             if user_choice == "1":
                 player_stats['player_max_hp'] = races['race_mer']['orsimer']['health']
@@ -484,7 +484,7 @@ def character_creation():
         elif user_choice == "9": # argonian choice
             print("\nAre you sure? ( | [1] Y̲E̲S̲ | [2] N̲O̲ | )   *you cannot change this later*")
             
-            user_choice = input("Enter your choice: ")
+            user_choice = input("\nEnter your choice: ")
 
             if user_choice == "1":
                 player_stats['player_max_hp'] = races['race_beast']['argonian']['health']
@@ -519,7 +519,7 @@ def character_creation():
     while True:
         x = input("\nWhat is your character's name? ")
         print("\nAre you sure? ( | [1] Y̲E̲S̲ | [2] N̲O̲ | )   *you cannot change this later*")
-        user_choice = input("Enter your choice: ")
+        user_choice = input("\nEnter your choice: ")
         if user_choice == "1":
             player_stats['player_name'] == x
             break
@@ -539,7 +539,7 @@ def action_screen():
         print("                        ( |    [1] S̲T̲A̲T̲U̲S̲    |   [2] M̲E̲N̲U̲    |   [3] E̲X̲I̲T̲ M̲E̲N̲U̲   | )")
         print("\n", separator, "\n")
         
-        user_choice = input("Enter your choice: ")
+        user_choice = input("\nEnter your choice: ")
         
         if user_choice == "1":
             display_status()
@@ -558,7 +558,7 @@ def menu_screen():
         print("\n", separator, "\n")
         print("         ( |    [1] I̲N̲V̲E̲N̲T̲O̲R̲Y̲    |   [2] M̲A̲G̲I̲C̲   |   [3] P̲E̲R̲K̲S̲   |   [4] M̲A̲P̲     |    [5] E̲X̲I̲T̲ M̲E̲N̲U̲   | )")
         print("\n", separator, "\n")
-        user_choice = input("Enter your choice: ")
+        user_choice = input("\nEnter your choice: ")
         
         if user_choice == "1":
             inventory_screen()
@@ -685,18 +685,18 @@ def game_opening():
     
     # asks for user input to continue the story
     while True: 
-        user_input = input("                                    CONTINUE? [ P̲R̲E̲S̲S̲ 1 T̲O̲ C̲O̲N̲T̲I̲N̲U̲E̲ ] ")
+        user_choice = input("                                    CONTINUE? [ P̲R̲E̲S̲S̲ 1 T̲O̲ C̲O̲N̲T̲I̲N̲U̲E̲ ] ")
     
-        if user_input == "1":
+        if user_choice == "1":
             break
         
     print("\n", separator, "\n")
 
     
     # next scene 
-    opening_scene_p1()
+    opening_scene_01()
 
-def opening_scene_p1():
+def opening_scene_01():
     count = 15
     while count > 0:
         print(".")
@@ -748,16 +748,16 @@ def opening_scene_p1():
     
     # asks for user input to continue the story
     while True: 
-        user_input = input("                                    CONTINUE? [ P̲R̲E̲S̲S̲ 1 T̲O̲ C̲O̲N̲T̲I̲N̲U̲E̲ ] ")
+        user_choice = input("                                    CONTINUE? [ P̲R̲E̲S̲S̲ 1 T̲O̲ C̲O̲N̲T̲I̲N̲U̲E̲ ] ")
     
-        if user_input == "1":
+        if user_choice == "1":
             break
         
     print("\n", separator, "\n")
     
-    opening_scene_p2()
+    opening_scene_02()
         
-def opening_scene_p2():
+def opening_scene_02():
     
     dialogue =  "-> As the carriage you're riding nears the wooden gates of the walled settlement, you look out and see an imperial soldier atop the gates.\n"\
                 "-> The soldier calls out to the white haired man clad in gilded armor riding atop a horse.\n\n"\
@@ -822,9 +822,9 @@ def opening_scene_p2():
     print("\n", separator, "\n") 
     
     while True: 
-        user_input = input("                                    CONTINUE? [ P̲R̲E̲S̲S̲ 1 T̲O̲ C̲O̲N̲T̲I̲N̲U̲E̲ ] ")
+        user_choice = input("                                    CONTINUE? [ P̲R̲E̲S̲S̲ 1 T̲O̲ C̲O̲N̲T̲I̲N̲U̲E̲ ] ")
     
-        if user_input == "1":
+        if user_choice == "1":
             break
     
     print("\n", separator, "\n") 
@@ -845,7 +845,7 @@ def execution_scene():
         count = count - 1
         time.sleep(0.2)
     
-    print("\n", separator, "\n")
+    print("\n", separator, "\n\n")
         
     # special dialogue for the player's race
     if player_stats['player_race'] == "nord":
@@ -1056,7 +1056,7 @@ def execution_scene():
     alduin_helgen_attack()
 
 def alduin_helgen_attack():  
-    print("\n", separator, "\n")
+    print("\n", separator, "\n\n")
         
     dialogue =  "-> You follow the captain's orders and walk to the block.\n"\
                 "-> As you lay on your knees with your neck on the block.\n"\
@@ -1118,12 +1118,114 @@ def alduin_helgen_attack():
         time.sleep(read_speed)
         
     print("\n", separator, "\n")
+    
+    escape_from_helgen_1()
+                       
+def escape_from_helgen_1():
+    
+    count = 15
+    while count > 0:
+        print(".")
+        count = count - 1
+        time.sleep(0.2)
+        
+    print("\n", separator, "\n")
+        
+    # asks for user input to continue the story
+    while True: 
+        user_choice = input("                                    CONTINUE? [ P̲R̲E̲S̲S̲ 1 T̲O̲ C̲O̲N̲T̲I̲N̲U̲E̲ ] ")
+    
+        if user_choice == "1":
+            break
+        
+    print("\n", separator, "\n")
+        
+    dialogue =  "-> Your hands are still bound. Ralof asks you to get up\n" \
+            
+    for i in dialogue:
+        sys.stdout.write(i)
+        sys.stdout.flush()
+        time.sleep(read_speed)
+    
+    print("\n", separator, "\n")
+    
+    print("You may:")
+    print("( | [1] Get up and follow Ralof | )")
+    
+    while True: 
+        user_choice = input("\nEnter your choice: ")
+    
+        if user_choice == "1":
+            break
+        
+    print("\n", separator, "\n")
+    
+    dialogue =  "-> You rise to your feet and follow Ralof.\n" \
+                "-> Ralof guides you toward a nearby stone watchtower..\n\n"\
+                " > Ralof : This way, come on!\n\n"\
+                "-> As you trail behind Ralof, the anguished screams of townspeople fill the air.\n"\
+                "-> You catch glimpses of Imperial Soldiers battling the black dragon.\n\n"\
+                " > Imperial Soldier : What in the Eight Divines is this thing?!\n"\
+                " > Imperial Soldier : How in Oblivion do we kill this thing?!\n"\
+                " > Imperial Soldier : It's still coming!\n"\
+                " > Imperial Soldier : By Ysmir! Nothing kills it!\n\n"\
+                "-> You witness an Imperial soldier struck by a falling meteor, meeting a swift death.\n\n"\
+                " > Imperial Soldier : Yeargh!\n\n"\
+                "-> You and Ralof enter the watchtower, where several Stormcloak soldiers, along with Ulfric Stormcloak, are taking shelter.\n"\
+                "-> Ralof closes the door behind you.\n\n"\
+                " > Ralof : Jarl Ulfric! What is that thing?\n"\
+                " > Ralof : Could the legends be true?\n"\
+                " > Ulfric Stormcloak : Legends dont burn down villages.\n\n"\
+                "-> A thunderous explosion erupts outside, shaking the watchtower.\n\n"\
+                " > Ulfric Stormcloak : We need to move. Now!\n"\
+                " > Ralof : Up through the tower, let's go!\n"\
+            
+    for i in dialogue:
+        sys.stdout.write(i)
+        sys.stdout.flush()
+        time.sleep(read_speed)
+        
+    print("\n", separator, "\n")
+    
+    print("You may:")
+    print("( |  [1] Follow Ralof up the tower  | )")
+    print("( |  [2] Listen in on the wounded Stormcloak Soldiers  | )")
+
+    while True:
+        user_choice = input("\nEnter your choice: ")
+        
+        print("\n", separator, "\n")
+    
+        if user_choice == "1":
+            dialogue_1
+            break
+        
+        elif user_choice == "2":
+            dialogue_2 
+    
+    def dialogue_1():                
+        dialogue = "asdasdas"
+    
+    def dialogue_2(): 
+        
+        dialogue =  "-> Upon entering the watchtower, you notice Stormcloak soldiers attending to their injuries.\n"\
+                        "-> Two wounded Stormcloak Soldiers lie on the floor\n"\
+                        "-> Another Stormcloak Soldier is tending to the their wounds.\n"\
+                        " > Stormcloak Soldier : They're hurt, but they'll live.\n"\
+                        " > Stormcloak Soldier : Another second out there with the dragon and they'd both be dead...\n"\
+        
+        for i in dialogue:
+            sys.stdout.write(i)
+            sys.stdout.flush()
+            time.sleep(read_speed)
+
                        
 # program launch into main menu
 #opening_scene_p1()
 #opening_scene_p2()
 #execution_scene()
-alduin_helgen_attack()
+#alduin_helgen_attack()
+escape_from_helgen_1()
 
 #display_status()
 #action_screen()
