@@ -1123,11 +1123,56 @@ def alduin_helgen_attack():
                        
 def escape_from_helgen_1():
     
-    count = 15
-    while count > 0:
-        print(".")
-        count = count - 1
-        time.sleep(0.2)
+    def dialogue_1():                
+        print("\n", separator, "\n")
+        dialogue =  "-> You follow Ralof up the tower.\n"\
+                    "-> The structure trembles beneath your feet as you climb.\n"\
+                    "-> You reach the entrance to middle-floor chamber of the tower.\n"\
+                    "-> The staircase to the top floor is obstructed by debris.\n"\
+                    "-> A Stormcloak Soldier attempts to clear the blockage.\n\n"\
+                    " > Stormcloak Soldier : We just need to move some of these rocks to clear the way!\n\n"\
+                    "-> The dragon bashes through the wall next to the staircase, killing the Stormcloak Soldier in the process.\n\n"\
+                    " > Black Dragon : Yol... Toor... Shul!\n\n"\
+                    "-> The dragon unleashes a torrent of fire, engulfing the entire room and incinerating any potential survivors before departing.\n"\
+                    "-> You and Ralof take cover on the stairs, narrowly avoiding the dragon's fiery assault.\n"
+                    
+        for i in dialogue:
+            sys.stdout.write(i)
+            sys.stdout.flush()
+            time.sleep(read_speed)
+            
+    
+    def dialogue_2(): 
+        print("\n", separator, "\n")
+        dialogue =  "-> Upon entering the watchtower, you notice Stormcloak soldiers attending to their injuries.\n"\
+                    "-> Two wounded Stormcloak Soldiers lie on the floor\n"\
+                    "-> Another Stormcloak Soldier is tending to the their wounds.\n"\
+                    " > Stormcloak Soldier : They're hurt, but they'll live.\n"\
+                    " > Stormcloak Soldier : Another second out there with the dragon and they'd both be dead...\n"\
+    
+        for i in dialogue:
+            sys.stdout.write(i)
+            sys.stdout.flush()
+            time.sleep(read_speed)
+       
+        print("\n", separator, "\n")
+        print("You may:")
+        print("( |  [1] Follow Ralof up the tower  | )")
+        
+        while True:
+            user_choice = input("\nEnter your choice: ")
+        
+            if user_choice == "1":
+                dialogue_1()
+                break
+            
+        print("\n", separator, "\n")
+    
+    #count = 15
+    #while count > 0:
+    #    print(".")
+    #    count = count - 1
+    #    time.sleep(0.2)
         
     print("\n", separator, "\n")
         
@@ -1188,37 +1233,37 @@ def escape_from_helgen_1():
     print("\n", separator, "\n")
     
     print("You may:")
-    print("( |  [1] Follow Ralof up the tower  | )")
-    print("( |  [2] Listen in on the wounded Stormcloak Soldiers  | )")
+    print("( |  [1] Follow Ralof up the tower  | )") # progress the story
+    print("( |  [2] Listen in on the wounded Stormcloak Soldiers  | )") # extra optional dialogue
 
+    while True:
+        user_choice = input("\nEnter your choice: ")
+    
+        if user_choice == "1": 
+            dialogue_1()
+            break
+        
+        elif user_choice == "2":
+            dialogue_2()
+            break
+    
+    print("\n", separator, "\n")
+    print("You may:")
+    print("( | [1] Look around | )")    
+    
     while True:
         user_choice = input("\nEnter your choice: ")
         
         print("\n", separator, "\n")
-    
+        
         if user_choice == "1":
-            dialogue_1
-            break
-        
-        elif user_choice == "2":
-            dialogue_2 
-    
-    def dialogue_1():                
-        dialogue = "asdasdas"
-    
-    def dialogue_2(): 
-        
-        dialogue =  "-> Upon entering the watchtower, you notice Stormcloak soldiers attending to their injuries.\n"\
-                    "-> Two wounded Stormcloak Soldiers lie on the floor\n"\
-                    "-> Another Stormcloak Soldier is tending to the their wounds.\n"\
-                    " > Stormcloak Soldier : They're hurt, but they'll live.\n"\
-                    " > Stormcloak Soldier : Another second out there with the dragon and they'd both be dead...\n"\
-    
+            print("\n", separator, "\n")
+            dialogue =  "-> asdasd.\n" \
+            
         for i in dialogue:
             sys.stdout.write(i)
             sys.stdout.flush()
             time.sleep(read_speed)
-
                        
 # program launch into main menu
 #opening_scene_p1()
