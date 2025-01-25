@@ -1209,11 +1209,11 @@ def escape_from_helgen_1():
     def dialogue_2(): 
         
         dialogue =  "-> Upon entering the watchtower, you notice Stormcloak soldiers attending to their injuries.\n"\
-                        "-> Two wounded Stormcloak Soldiers lie on the floor\n"\
-                        "-> Another Stormcloak Soldier is tending to the their wounds.\n"\
-                        " > Stormcloak Soldier : They're hurt, but they'll live.\n"\
-                        " > Stormcloak Soldier : Another second out there with the dragon and they'd both be dead...\n"\
-        
+                    "-> Two wounded Stormcloak Soldiers lie on the floor\n"\
+                    "-> Another Stormcloak Soldier is tending to the their wounds.\n"\
+                    " > Stormcloak Soldier : They're hurt, but they'll live.\n"\
+                    " > Stormcloak Soldier : Another second out there with the dragon and they'd both be dead...\n"\
+    
         for i in dialogue:
             sys.stdout.write(i)
             sys.stdout.flush()
