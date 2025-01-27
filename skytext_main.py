@@ -60,22 +60,74 @@ gloves = {}
 boots = {}
 magic  = {}
 
+# dict of consumable items like potions
 consumable = { 
     
     'alcohol' : {
         
         'juniper_mead' : {
             
-            'description' : 'nord mead with juniper berries mixed in',
+            'hp_restore'  : 0,
+            'sta_restore' : 10,
+            'mp_restore'  : 0,
+            
+        },
+    
+    },
+    
+    'potion' : {
+        
+        'hp_potion_small' : {
+            
+            'hp_restore'  : 20,
+            'sta_restore' : 0,
+            'mp_restore'  : 0,
+            
+            },
+        
+        'hp_potion_large' : {
+            
+            'hp_restore'  : 50,
+            'sta_restore' : 0,
+            'mp_restore'  : 0,
+            
+            },
+        
+        'sta_potion_small' : {
+            
             'hp_restore'  : 0,
             'sta_restore' : 20,
             'mp_restore'  : 0,
             
-        }
+            },
         
-    }
+        'sta_potion_large' : {
+            
+            'hp_restore'  : 0,
+            'sta_restore' : 50,
+            'mp_restore'  : 0,
+            
+            },
+        
+        'mp_potion_small' : {
+            
+            'hp_restore'  : 0,
+            'sta_restore' : 20,
+            'mp_restore'  : 0,
+            
+            },
+        
+        'mp_potion_large' : {
+            
+            'hp_restore'  : 0,
+            'sta_restore' : 50,
+            'mp_restore'  : 0,
+            
+            },
     
-}
+    }
+     
+    }  
 
 # things for character customization
 # possible character races with abilities 
@@ -648,6 +700,7 @@ def display_status():
     print("\n", separator, "\n")
 
 # !!! Gameplay Functions !!!
+# function for picking up items
 def add_to_inventory(item_dict, item_type, item_name, quantity):
     
     if item_type in item_dict and item_name in item_dict[item_type]:
@@ -665,7 +718,7 @@ def add_to_inventory(item_dict, item_type, item_name, quantity):
     
     else:
         print(f"{item_name} is invalid")
-    
+# function for consuming items such as potions    
 def consume_item(item_type, item_name):
     
     if  item_type in player_inventory and item_name in player_inventory[item_type]: # checks if item is in inventory
@@ -687,8 +740,7 @@ def consume_item(item_type, item_name):
             print(f"No {item_name} left in inventory.") # if the user ran out of items to be consumed
             
     else: 
-        print(f"{item_name} is not in inventory.")
-    
+        print(f"{item_name} is not in inventory.")  
 
 # !!! Gameplay !!!
 def game_opening():
@@ -697,7 +749,7 @@ def game_opening():
     while count > 0:
         print(".")
         count = count - 1
-        time.sleep(0.2)
+        time.sleep(0.1)
     
     print("\n", separator, "\n")
     
@@ -707,7 +759,7 @@ def game_opening():
     for i in string:
         sys.stdout.write(i)
         sys.stdout.flush()
-        time.sleep(0.02)
+        time.sleep(read_speed)
     
     # format
     count = 5
@@ -775,7 +827,7 @@ def game_opening():
     opening_scene_01()
 
 def opening_scene_01():
-    count = 15
+    count = 30
     while count > 0:
         print(".")
         count = count - 1
@@ -907,7 +959,7 @@ def opening_scene_02():
     
     print("\n", separator, "\n") 
     
-    count = 15
+    count = 30
     while count > 0:
         print(".")
         count = count - 1
@@ -917,7 +969,7 @@ def opening_scene_02():
 
 def execution_scene():
     
-    count = 15
+    count = 30
     while count > 0:
         print(".")
         count = count - 1
@@ -1194,19 +1246,17 @@ def alduin_helgen_attack():
         sys.stdout.write(i)
         sys.stdout.flush()
         time.sleep(read_speed)
-        
-    print("\n", separator, "\n")
     
     escape_from_helgen_1()
                        
 def escape_from_helgen_1():                
     print("\n", separator, "\n")
     
-    #count = 15
-    #while count > 0:
-    #    print(".")
-    #    count = count - 1
-    #    time.sleep(0.2)
+    count = 15
+    while count > 0:
+        print(".")
+        count = count - 1
+        time.sleep(0.2)
         
     print("\n", separator, "\n")
         
@@ -1375,7 +1425,7 @@ def escape_from_helgen_1():
         
         if user_choice == "1":
             print("\n", separator, "\n")
-            dialogue =  "-> You discover two bottles of juniper berry mead on the tables.\n" \
+            dialogue =  "-> You leap through the opening and make your way out of the inn.\n" \
                         "-> The stairs to the inn’s first floor have been destroyed by fire.\n"\
                         "-> Part of the floor has been burned away, creating a hole.\n"\
                             
@@ -1388,15 +1438,8 @@ def escape_from_helgen_1():
         
         elif user_choice == "2":
             print("\n", separator, "\n")
-        
             add_to_inventory(consumable, 'alcohol', 'juniper_mead', 2)
-            print(player_inventory)
             
-            break
-            
-    consume_item('alcohol', 'juniper_mead')
-    
-    display_status()
     
 # program launch into main menu
 #opening_scene_p1()
@@ -1408,7 +1451,7 @@ def escape_from_helgen_1():
 
 #display_status()
 #action_screen()
-character_creation()
+#character_creation()
 
-#main_menu_visual()
-#main_menu_function()
+main_menu_visual()
+main_menu_function()
