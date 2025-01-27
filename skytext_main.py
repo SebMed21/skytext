@@ -963,7 +963,7 @@ def opening_scene_02():
     while count > 0:
         print(".")
         count = count - 1
-        time.sleep(0.2)
+        time.sleep(0.1)
     
     character_creation()
 
@@ -973,7 +973,7 @@ def execution_scene():
     while count > 0:
         print(".")
         count = count - 1
-        time.sleep(0.2)
+        time.sleep(0.1)
     
     print("\n", separator, "\n\n")
         
@@ -1253,11 +1253,11 @@ def escape_from_helgen_1():
     global action_flag
     print("\n", separator, "\n")
     
-    count = 15
+    count = 30
     while count > 0:
         print(".")
         count = count - 1
-        time.sleep(0.2)
+        time.sleep(0.1)
         
     print("\n", separator, "\n")
         
@@ -1456,6 +1456,7 @@ def escape_from_helgen_1():
                         " > Imperial Soldier : I have to find General Tullius and Join their defense.\n"\
                         " > Gunnar : Gods guide you, Hadvar.\n"\
                         "-> From their exchange, you learn that the Imperial Soldier accompanying you is named Hadvar.\n"\
+                        "-> Hadvar runs into the street looking for General Tullius.\n"\
                             
             for i in dialogue:
                 sys.stdout.write(i)
@@ -1465,22 +1466,227 @@ def escape_from_helgen_1():
             break     
         
         elif user_choice == "2" and not action_flag:
-            print("\n", separator, "\n")
             action_flag = True
+            print("\n", separator, "\n")
             add_to_inventory(consumable, 'alcohol', 'juniper_mead', 2)
+            print("\n", separator, "\n")
             
         elif user_choice == "2" and action_flag:
             print("\nYou have already taken everything")
             
+    print("\n", separator, "\n")
+    print("You may:")
+    print("( | [1] Follow Hadvar | )") 
+    
+    while True:
+        user_choice = input("\nEnter your choice: ")
         
+        if user_choice == "1":
+            print("\n", separator, "\n")
             
+            dialogue =  "-> You follow Hadvar for a distance until the two of you arrive at an alleyway.\n"\
+                        "-> The Black Dragon perches overhead upon a stone wall.\n\n"\
+                        " > Hadvar : Stay close to the wall!\n\n"\
+                        "-> You and Hadvar take cover beneath the wall, staying out of the Black Dragon's sight.\n"\
+                        "-> The Black Dragon readies itself once more to unleash fire on the Imperial Soldiers in the nearby street.\n\n"\
+                        " > Black Dragon : Yol... Toor... Shul!\n\n"\
+                        "-> The Black Dragon soars into the skies again after unleashing its fiery breath.\n"\
+                        "-> You and Hadvar resume your escape.\n"\
+                        "-> After navigating through the wreckage of destroyed houses, the two of you emerge onto an adjacent street.\n"\
+                        "-> There, you witness Imperial Soldiers, Archers, and Mages working together in an attempt to bring down the Black Dragon.\n"\
+                        "-> At the center of their formation, you spot General Tullius issuing commands.\n"\
+                        "-> General Tullius notices you and Hadvar approaching and immediately gives Hadvar new orders.\n\n"\
+                        " > General Tullius : Hadvar!\n"\
+                        " > General Tullius : Into the keep, Soldier! We're leaving!\n\n"\
+                        "-> You notice an injured man on the ground bleeding.\n"\
+            
+            for i in dialogue:
+                sys.stdout.write(i)
+                sys.stdout.flush()
+                time.sleep(read_speed)
+
+            break
+        
+    print("\n", separator, "\n")
+    print("You may:")
+    print("( | [1] Follow Hadvar | )") 
+    print("( | [1] Stay with General Tullius | )") 
+    
+    action_flag = False
+    while True:
+        user_choice = input("\nEnter your choice: ")
+        
+        if user_choice == "1":
+            print("\n", separator, "\n")
+            
+            dialogue =  "-> You follow Hadvar and make a turn left.\n"\
+                        "-> You see Imperial Archers and Mages fire upon the Black Dragon.\n"\
+                        "-> The Black Dragon flies by and spews fire onto the Imperial Soldiers.\n"\
+                        "-> You and Hadvar pass by a small gate and approach Helgen Keep, where you encounter a familiar face.\n"\
+                        "-> Ralof has also reached Helgen Keep, having separated from Ulfric Stormcloak and the other Stormcloak Soldiers.\n"\
+                        " > Hadvar : Ralof! You damned traitor.\n"\
+                        " > Hadvar : Out of my way!\n"\
+                        " > Ralof : We're escaping, Hadvar.\n"\
+                        " > Ralof : You're not stopping us this time.\n"\
+                        " > Hadvar : Fine. I hope that dragon takes you all to Sovngarde.\n"\
+                        " > Ralof : You! Come on, into the keep!\n"\
+                        "-> Both Ralof and Hadvar seems to want for you to escape with them.\n"
+                        
+            for i in dialogue:
+                sys.stdout.write(i)
+                sys.stdout.flush()
+                time.sleep(read_speed)
+
+            break
+    
+        elif user_choice == "2" and not action_flag:
+            print("\n", separator, "\n")
+            action_flag = True
+            dialogue =  "General Tullius : Run, you idiot!\n"\
+            
+            for i in dialogue:
+                sys.stdout.write(i)
+                sys.stdout.flush()
+                time.sleep(read_speed)
+                
+            print("\n", separator, "\n")
+            
+        elif user_choice == "2" and action_flag:
+            print("\nThe General tells you to follow Hadvar")
+    
+    print("\n", separator, "\n")        
+    print("You may:")
+    print(" * Note : This will affect gameplay later")
+    print("( | [1] Follow Hadvar | )") 
+    print("( | [1] Follow Ralof | )") 
+    
+    while True: 
+        
+        user_choice = input("\nEnter your choice: ")
+        
+        if user_choice == "1": # Hadvar choice
+            print("\n", separator, "\n")
+            
+            dialogue =  "-> You decided to follow Hadvar into the keep\n\n"\
+                        " > Hadvar : Come on! We need to get inside!\n\n"\
+                        "-> As you walk towards the keep the Black Dragon lands a small distance way.\n"\
+                        "-> The Black Dragon grabs an Imperial Archer tossing them into the air to leave their body to crash to the ground afterwards.\n"\
+                        "-> The Black Dragon then speaks...\n"\
+        
+            for i in dialogue:
+                sys.stdout.write(i)
+                sys.stdout.flush()
+                time.sleep(read_speed)
+        
+            break
+        
+        elif user_choice == "2": # Ralof choice
+            print("\n", separator, "\n")
+            
+            dialogue =  "-> You decided to follow Ralof into the keep\n\n"\
+                        " > Ralof : Through here. Let's go!\n"\
+                        "-> As you walk towards the keep the Black Dragon lands a small distance way.\n"\
+                        "-> The Black Dragon grabs an Imperial Archer tossing them into the air to leave their body to crash to the ground afterwards.\n"\
+                        "-> The Black Dragon then speaks...\n"\
+        
+                        
+            
+            for i in dialogue:
+                sys.stdout.write(i)
+                sys.stdout.flush()
+                time.sleep(read_speed)
+            
+            break
+    
+    print("\n", separator, "\n")
+
+    entry_helgen_keep()
+        
+def entry_helgen_keep():
+    
+    count = 15
+    while count > 0:
+        print(".")
+        count = count - 1
+        time.sleep(0.1)
+    
+    print("\n", separator, "\n") 
+        
+    print("⠀⠀⠀⠀⠀⠀⣰⠂⠀⣼⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣀⠀⠀⠀⠀")
+    time.sleep(0.2)   
+    print("⠀⠀⠀⠀⠀⠀⡟⢆⢠⢣⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡘⡇⠹⢦⠀⠀⠀⠀⠀⠀")
+    time.sleep(0.2)
+    print("⠀⠀⠀⠀⠀⠀⠹⣦⣹⢸⡖⠤⢀⠀⠘⢿⠛⢔⠢⡀⠃⠣⠀⠇⢡⠀⠀⠀⠀⠀")
+    time.sleep(0.2)
+    print("⠀⠀⠀⠀⠀⠀⠀⠀⠹⠀⡷⣄⠠⡈⠑⠢⢧⠀⢢⠰⣼⢶⣷⣾⠀⠃⠀⠀⠀⠀")
+    time.sleep(0.2)
+    print("⠀⠀⠀⠀⠀⠀⠀⠤⢖⡆⠰⡙⢕⢬⡢⣄⠀⠑⢼⠀⠚⣿⢆⠀⠱⣸⠀⠀⠀⠀")
+    time.sleep(0.2)
+    print("⠀⠀⠀⠀⠀⢀⣤⡶⠮⢧⡀⠑⡈⢢⣕⡌⢶⠀⠀⣱⣠⠉⢺⡄⠀⢹⠀⠀⠀⠀")
+    time.sleep(0.2)
+    print("⠀⠀⠀⠀⠀⠀⢀⡸⠀⠈⡗⢄⡈⢆⠙⠿⣶⣿⠿⢿⣷⣴⠉⠹⢶⢾⡆⠀⠀⠀")
+    time.sleep(0.2)
+    print("⠀⠀⠀⢠⠶⠿⡉⠉⠉⠙⢻⣮⡙⢦⣱⡐⣌⠿⡄⢁⠄⠑⢤⣀⠐⢻⡇⠀⠀")
+    time.sleep(0.2)
+    print("⠀⠀⠀⢀⣠⠾⠖⠛⢻⠟⠁⢘⣿⣆⠹⢷⡏⠀⠈⢻⣤⡆⠀⠑⢴⠉⢿⣄⠀⠀")
+    time.sleep(0.2)
+    print("⠀⠀⢠⠞⢃⢀⣠⡴⠋⠀⠈⠁⠉⢻⣷⣤⠧⡀⠀⠈⢻⠿⣿⡀⠀⢀⡀⣸⠀⠀")
+    time.sleep(0.2)
+    print("⠀⠀⢀⠔⠋⠁⡰⠁⠀⢀⠠⣤⣶⠞⢻⡙⠀⠙⢦⠀⠈⠓⢾⡟⡖⠊⡏⡟⠀⠀")
+    time.sleep(0.2)
+    print("⠀⢠⣋⢀⣠⡞⠁⠀⠔⣡⣾⠋⠉⢆⡀⢱⡀⠀⠀⠀⠀⠀⠀⢿⡄⠀⢇⠇⠀⠀", "                       Fen du hiin sille ko Sovngarde!")
+    time.sleep(0.2)
+    print("⠀⠎⣴⠛⢡⠃⠀⠀⣴⡏⠈⠢⣀⣸⣉⠦⣬⠦⣀⠀⣄⠀⠀⠈⠃⠀⠀⠙⡀", "                        Hin sil fen nahkip bahloki.")
+    time.sleep(0.2)
+    print("⠀⡸⡁⣠⡆⠀⠀⣾⠋⠑⢄⣀⣠⡤⢕⡶⠁⠀⠀⠁⢪⠑⠤⡀⠀⢰⡐⠂⠑⢀", "                       Daar Lein los dii.")
+    time.sleep(0.2)
+    print("⠀⠏⡼⢋⠇⠀⣸⣟⣄⠀⠀⢠⡠⠓⣿⠇⠀⠀⠀⠀⠀⠑⢄⡌⠆⢰⣷⣀⡀⢸", "                       Kel drey ni viik.")
+    time.sleep(0.2)
+    print("⠀⣸⠁⢸⠀⢀⡿⡀⠀⠈⢇⡀⠗⢲⡟⠀⠀⠀⠀⠀⠀⠀⠀⠹⡜⠦⣈⠀⣸⡄")
+    time.sleep(0.2)
+    print("⠀⣧⠤⣼⠀⢸⠇⠉⠂⠔⠘⢄⣀⢼⠃⡇⠀⠀⠀⠀⠀⠀⠀⠀⠈⠑⠚⠳⠋⠀")
+    time.sleep(0.2)
+    print("⠐⠇⣰⢿⠀⣾⢂⣀⣀⡸⠆⠁⠀⣹⠀⢡⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
+    time.sleep(0.2)
+    print("⠀⢀⡏⣸⠀⣟⠁⠀⠙⢄⠼⠁⠈⢺⠀⠘⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
+    time.sleep(0.2)
+    print("⠀⠈⡏⣸⢰⡯⠆⢤⠔⠊⢢⣀⣀⡼⡇⠀⠹⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
+    time.sleep(0.2)
+    print("⠀⠀⢠⢻⢸⡇⠀⠀⠑⣤⠊⠀⠀⠈⣧⠀⠀⠙⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
+    time.sleep(0.2)
+    print("⠀⠀⠸⣼⢸⠟⠑⠺⡉⠈⢑⠆⠠⠐⢻⡄⠀⠀⠈⢆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
+    time.sleep(0.2)
+    print("⠀⠀⠀⡟⣸⡀⠀⠀⣈⣶⡁⠀⠀⠀⢠⢻⡄⠀⠀⠀⠑⠤⣄⡀⠀⠀⠀⠀⠀⠀")
+    time.sleep(0.2)
+    print("⠀⠀⢰⠁⣿⡿⠟⢏⠁⠀⢈⠖⠒⠊⠉⠉⠹⣄⠀⠀⠀⠀⠀⠈⠑⠢⡀⠀⠀⠀")
+    time.sleep(0.2)
+    print("⠀⣀⠟⢰⡇⠀⠀⠈⢢⡴⠊⠀⠀⠀⠀⠀⣸⢙⣷⠄⢀⠀⠠⠄⠐⠒⠚⠀⠀⠀")
+    time.sleep(0.2)
+    print("⠘⠹⠤⠛⠛⠲⢤⠐⠊⠈⠂⢤⢀⠠⠔⠊⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
+    time.sleep(0.2)
+    print("⠀⠀⠀⠀⠀⠀⠀⠣⢀⡀⠔⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
+    time.sleep(0.2)
+    
+    print("\n", separator, "\n")
+    
+    print("You and your companion enter the keep....")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("                                                      TO BE CONTINUED")
+    
+    
+    
     
 # program launch into main menu
 #opening_scene_p1()
 #opening_scene_p2()
 #execution_scene()
 #alduin_helgen_attack()
-escape_from_helgen_1()
+#escape_from_helgen_1()
+entry_helgen_keep()
 # testing()
 
 #display_status()
