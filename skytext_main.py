@@ -223,7 +223,7 @@ races = {
         }
 
 # initialization for text and other utils
-separator = "================================================================================================================="
+separator = "=" * 150
     # print("\n", separator, "\n")
     # user_choice = input("Enter your choice: ")
     
@@ -1250,6 +1250,7 @@ def alduin_helgen_attack():
     escape_from_helgen_1()
                        
 def escape_from_helgen_1():                
+    global action_flag
     print("\n", separator, "\n")
     
     count = 15
@@ -1316,10 +1317,11 @@ def escape_from_helgen_1():
     print("You may:")
     print("( |  [1] Follow Ralof up the tower  | )") # progress the story
     print("( |  [2] Listen in on the wounded Stormcloak Soldiers  | )") # extra optional dialogue
-
+    
+    # action flag to be used later
+    action_flag = False
     while True:
         user_choice = input("\nEnter your choice: ")
-    
         if user_choice == "1": 
             print("\n", separator, "\n")
             dialogue =  "-> You follow Ralof up the tower.\n"\
@@ -1342,20 +1344,24 @@ def escape_from_helgen_1():
             
             break
         
-        elif user_choice == "2":
+        elif user_choice == "2" and not action_flag:
             print("\n", separator, "\n")
+            action_flag = True
             dialogue =  "-> Upon entering the watchtower, you notice Stormcloak soldiers attending to their injuries.\n"\
                         "-> Two wounded Stormcloak Soldiers lie on the floor\n"\
                         "-> Another Stormcloak Soldier is tending to the their wounds.\n\n"\
                         " > Stormcloak Soldier : They're hurt, but they'll live.\n"\
                         " > Stormcloak Soldier : Another second out there with the dragon and they'd both be dead...\n"\
-
+                            
             for i in dialogue:
                 sys.stdout.write(i)
                 sys.stdout.flush()
                 time.sleep(read_speed)
             
-            print("\n", separator)
+            print("\n", separator)     
+                            
+        elif user_choice == "2" and action_flag:
+            print("\nThe Soldiers have nothing more to say.")
             
     print("\n", separator, "\n")
     print("You may:")
@@ -1420,14 +1426,36 @@ def escape_from_helgen_1():
     print("( | [1] Jump down the opening and exit out of the inn | )") 
     print("( | [2] Take the mead | )")   
     
+    # action flag to be used later
+    action_flag = False
     while True:
         user_choice = input("\nEnter your choice: ")
         
         if user_choice == "1":
             print("\n", separator, "\n")
             dialogue =  "-> You leap through the opening and make your way out of the inn.\n" \
-                        "-> The stairs to the inn’s first floor have been destroyed by fire.\n"\
-                        "-> Part of the floor has been burned away, creating a hole.\n"\
+                        "-> Helgen lies in ruins, with many buildings destroyed and engulfed in flames.\n"\
+                        "-> As you rush into the street, you spot the Imperial Soldier holding a ledger from earlier.\n"\
+                        "-> The Imperial Soldier seems to be helping townspeople into safety.\n\n"\
+                        " > Imperial Soldier : Haming, you need to get over here. Now!\n\n"\
+                        "-> You see a young boy scurrying over to the Imperial Soldier.\n\n"\
+                        " > Imperial Soldier : That a boy. You're doing great.\n\n"\
+                        "-> The dragon suddenly swoops down, landing on a nearby street.\n"\
+                        "-> Its gaze locks onto a wounded man lying on the ground.\n"\
+                        "-> The dragon readies itself to unleash a fiery breath..\n\n"\
+                        " > Imperial Soldier : Torolf!\n"\
+                        " > Black Dragon : Yol... Toor... Shul!\n"\
+                        " > Imperial Soldier : Gods... Everyone get back!\n\n"\
+                        "-> You, the Imperial Soldier, Haming the boy, and a bald man sought cover behind the remains of a collapsed building.\n"\
+                        "-> Flames engulf the wounded man, incinerating him and leaving behind nothing but a charred husk.\n"\
+                        "-> The Dragon then flies away.\n"\
+                        "-> The Imperial Soldier turned to you.\n\n"\
+                        " > Imperial Soldier : Still alive, prisoner? Keep close to me if you want to stay that way.\n\n"\
+                        "-> He then shifts his attention to the bald man.\n\n"\
+                        " > Imperial Soldier : Gunnar, take care of the boy.\n"\
+                        " > Imperial Soldier : I have to find General Tullius and Join their defense.\n"\
+                        " > Gunnar : Gods guide you, Hadvar.\n"\
+                        "-> From their exchange, you learn that the Imperial Soldier accompanying you is named Hadvar.\n"\
                             
             for i in dialogue:
                 sys.stdout.write(i)
@@ -1436,9 +1464,15 @@ def escape_from_helgen_1():
         
             break     
         
-        elif user_choice == "2":
+        elif user_choice == "2" and not action_flag:
             print("\n", separator, "\n")
+            action_flag = True
             add_to_inventory(consumable, 'alcohol', 'juniper_mead', 2)
+            
+        elif user_choice == "2" and action_flag:
+            print("\nYou have already taken everything")
+            
+        
             
     
 # program launch into main menu
@@ -1446,12 +1480,12 @@ def escape_from_helgen_1():
 #opening_scene_p2()
 #execution_scene()
 #alduin_helgen_attack()
-#escape_from_helgen_1()
+escape_from_helgen_1()
 # testing()
 
 #display_status()
 #action_screen()
 #character_creation()
 
-main_menu_visual()
-main_menu_function()
+#main_menu_visual()
+#main_menu_function()
