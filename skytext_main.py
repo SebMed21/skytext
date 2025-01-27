@@ -273,12 +273,10 @@ def main_menu_function():
         # user wishes to start a new game save
         if user_choice == "1":
             game_opening()
-            break
         
         # user wishes to continue a past game save 
         elif user_choice == "2":
             settings()
-            break
         
         # user wishes to quit the game
         elif user_choice == "3":
@@ -299,6 +297,7 @@ def settings():
     print("\n( |  [6] R̲E̲T̲U̲R̲N̲  | )")
     print("\n", separator)
     
+    global read_speed
     while True:
         user_choice = input("\nEnter your choice: ")
         
@@ -1523,7 +1522,7 @@ def escape_from_helgen_1():
                         "-> You see Imperial Archers and Mages fire upon the Black Dragon.\n"\
                         "-> The Black Dragon flies by and spews fire onto the Imperial Soldiers.\n"\
                         "-> You and Hadvar pass by a small gate and approach Helgen Keep, where you encounter a familiar face.\n"\
-                        "-> Ralof has also reached Helgen Keep, having separated from Ulfric Stormcloak and the other Stormcloak Soldiers.\n"\
+                        "-> Ralof has also reached Helgen Keep, having separated from Ulfric Stormcloak and the other Stormcloak Soldiers.\n\n"\
                         " > Hadvar : Ralof! You damned traitor.\n"\
                         " > Hadvar : Out of my way!\n"\
                         " > Ralof : We're escaping, Hadvar.\n"\
@@ -1558,7 +1557,7 @@ def escape_from_helgen_1():
     print("You may:")
     print(" * Note : This will affect gameplay later")
     print("( | [1] Follow Hadvar | )") 
-    print("( | [1] Follow Ralof | )") 
+    print("( | [2] Follow Ralof | )") 
     
     while True: 
         
