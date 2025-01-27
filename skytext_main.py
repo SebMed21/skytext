@@ -38,7 +38,19 @@ player_equipment = {
 player_inventory = {}
 
 # dictionary for items, equipment, and spells
-sword = {}
+sword = {
+    
+    'one_handed' : {
+        
+        'iron_sword' : {
+            
+            'damage' : 10
+            
+        }
+        
+    }
+
+}
 axe = {}
 hammer = {}
 shield = {}
@@ -54,6 +66,7 @@ consumable = {
         'juniper_mead' : {
             
             'description' : 'nord mead with juniper berries mixed in'
+            'sta_restore'
             
         }
         
@@ -160,6 +173,7 @@ separator = "===================================================================
     
 read_speed = 0 # default speed of text that can be changed in the settings
 
+# !!! Gameplay Menus !!!  
 # displays the opening main menu for the game 
 def main_menu_visual():
     print("\n", separator, "\n")
@@ -543,8 +557,7 @@ def character_creation():
     print("\n", separator, "\n")  
  
     execution_scene()
-                
-# !!! Gameplay Menus !!!               
+                             
 # displays the current actions a user can do
 def action_screen():
     while True:
@@ -626,6 +639,29 @@ def display_status():
     print("\n", separator, "\n")
 
 # !!! Gameplay Functions !!!
+def add_to_inventory(item_dict, item_type, item_name, quantity):
+    
+    if item_type in item_dict and item_name in item_dict[item_type]:
+        if item_type not in player_inventory: # if the item type is in the player inventory, if so, adds new item type to player inventory
+            
+            player_inventory[item_type] = {}
+            
+        if item_name not in player_inventory[item_type]: # if the item is not already in the player inventory, sets the count to 0
+            
+            player_inventory[item_type][item_name] = 0
+            
+        player_inventory[item_type][item_name] += quantity # if the item type and item is already in the inventory, adds 1 more count to the item
+
+        print(f"{quantity} {item_name} added to inventory") 
+    
+    else:
+        print(f"{item_name} is invalid")
+    
+def consume_item():
+    print("item has been consumed")
+    
+
+# !!! Gameplay !!!
 def game_opening():
     # "." dot delay
     count = 15
@@ -1323,14 +1359,9 @@ def escape_from_helgen_1():
         
         elif user_choice == "2":
             print("\n", separator, "\n")
-            dialogue =  "-> You take two bottles of mead.\n" \
-                            
-            for i in dialogue:
-                sys.stdout.write(i)
-                sys.stdout.flush()
-                time.sleep(read_speed)
-                
-            player_inventory.append(consumable['alcohol']['juniper_mead'])
+        
+            add_to_inventory(consumable, 'alcohol', 'juniper_mead', 2)
+            print(player_inventory)
             
                               
                        
@@ -1339,11 +1370,11 @@ def escape_from_helgen_1():
 #opening_scene_p2()
 #execution_scene()
 #alduin_helgen_attack()
-#escape_from_helgen_1()
+escape_from_helgen_1()
 
 #display_status()
 #action_screen()
-character_creation()
+##character_creation()
 
 #main_menu_visual()
 #main_menu_function()
