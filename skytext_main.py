@@ -227,7 +227,7 @@ separator = "=" * 150
     # print("\n", separator, "\n")
     # user_choice = input("Enter your choice: ")
     
-read_speed = 0 # default speed of text that can be changed in the settings
+read_speed = 0.05 # default speed of text that can be changed in the settings
 
 # !!! Gameplay Menus !!!  
 # displays the opening main menu for the game 
@@ -296,14 +296,14 @@ def settings():
     print("\n", separator, "\n")
     print(" TEXT SPEED: (how fast the dialogue and text gets printed out):\n")
     print("                        ( |    [1] I̲N̲S̲T̲A̲N̲T̲ (0.0)    |   [2] F̲A̲S̲T̲ (0.02)    |   [3] D̲E̲F̲A̲U̲L̲T̲ (0.05)   |   [4] S̲L̲O̲W̲ (0.07)   |   [5] R̲E̲A̲L̲L̲Y̲ S̲L̲O̲W̲ (0.1)   | )\n")
-    print("( |  [6] R̲E̲T̲U̲R̲N̲  | )")
+    print("\n( |  [6] R̲E̲T̲U̲R̲N̲  | )")
     print("\n", separator)
     
     while True:
         user_choice = input("\nEnter your choice: ")
         
         if user_choice == "1":
-            read_speed = 0.0 # instant speed
+            read_speed = 0 # instant speed
             print(f"Text Speed Set to : Instant ({read_speed})")
             
         
@@ -1686,12 +1686,12 @@ def entry_helgen_keep():
 #execution_scene()
 #alduin_helgen_attack()
 #escape_from_helgen_1()
-entry_helgen_keep()
+#entry_helgen_keep()
 # testing()
 
 #display_status()
 #action_screen()
 #character_creation()
 
-#main_menu_visual()
-#main_menu_function()
+main_menu_visual()
+main_menu_function()
