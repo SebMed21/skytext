@@ -47,11 +47,24 @@ body = {}
 gloves = {}
 boots = {}
 magic  = {}
+consumable = { 
+    
+    'alcohol' : {
+        
+        'juniper_mead' : {
+            
+            'description' : 'nord mead with juniper berries mixed in'
+            
+        }
+        
+    }
+    
+}
 
 # things for character customization
 # possible character races with abilities 
 races = { 
-        'race_man': { 
+        'race_man' : { 
             
             'nord': { 
                     'health': 100, 
@@ -220,7 +233,7 @@ def settings():
         user_choice = input("\nEnter your choice: ")
         
         if user_choice == "1":
-            read_speed = 0 # instant speed
+            read_speed = 0.0 # instant speed
             print(f"Text Speed Set to : Instant ({read_speed})")
             
         
@@ -1136,58 +1149,55 @@ def escape_from_helgen_1():
     while True: 
         user_choice = input("                                    CONTINUE? [ P̲R̲E̲S̲S̲ 1 T̲O̲ C̲O̲N̲T̲I̲N̲U̲E̲ ] ")
     
-        if user_choice == "1":
+        if user_choice == "1":        
+            print("\n", separator, "\n")
+        
+            dialogue =  "-> Your hands are still bound. Ralof asks you to get up\n" \
+                    
+            for i in dialogue:
+                sys.stdout.write(i)
+                sys.stdout.flush()
+                time.sleep(read_speed)
+
             break
-        
-    print("\n", separator, "\n")
-        
-    dialogue =  "-> Your hands are still bound. Ralof asks you to get up\n" \
-            
-    for i in dialogue:
-        sys.stdout.write(i)
-        sys.stdout.flush()
-        time.sleep(read_speed)
     
     print("\n", separator, "\n")
-    
     print("You may:")
     print("( | [1] Get up and follow Ralof | )")
     
     while True: 
         user_choice = input("\nEnter your choice: ")
-    
-        if user_choice == "1":
-            break
-        
-    print("\n", separator, "\n")
-    
-    dialogue =  "-> You rise to your feet and follow Ralof.\n" \
-                "-> Ralof guides you toward a nearby stone watchtower..\n\n"\
-                " > Ralof : This way, come on!\n\n"\
-                "-> As you trail behind Ralof, the anguished screams of townspeople fill the air.\n"\
-                "-> You catch glimpses of Imperial Soldiers battling the black dragon.\n\n"\
-                " > Imperial Soldier : What in the Eight Divines is this thing?!\n"\
-                " > Imperial Soldier : How in Oblivion do we kill this thing?!\n"\
-                " > Imperial Soldier : It's still coming!\n"\
-                " > Imperial Soldier : By Ysmir! Nothing kills it!\n\n"\
-                "-> You witness an Imperial soldier struck by a falling meteor, meeting a swift death.\n\n"\
-                " > Imperial Soldier : Yeargh!\n\n"\
-                "-> You and Ralof enter the watchtower, where several Stormcloak soldiers, along with Ulfric Stormcloak, are taking shelter.\n"\
-                "-> Ralof closes the door behind you.\n\n"\
-                " > Ralof : Jarl Ulfric! What is that thing?\n"\
-                " > Ralof : Could the legends be true?\n"\
-                " > Ulfric Stormcloak : Legends dont burn down villages.\n\n"\
-                "-> A thunderous explosion erupts outside, shaking the watchtower.\n\n"\
-                " > Ulfric Stormcloak : We need to move. Now!\n"\
-                " > Ralof : Up through the tower, let's go!\n"\
+ 
+        if user_choice == "1":      
+            print("\n", separator, "\n")
+            dialogue =  "-> You rise to your feet and follow Ralof.\n" \
+                        "-> Ralof guides you toward a nearby stone watchtower..\n\n"\
+                        " > Ralof : This way, come on!\n\n"\
+                        "-> As you trail behind Ralof, the anguished screams of townspeople fill the air.\n"\
+                        "-> You catch glimpses of Imperial Soldiers battling the black dragon.\n\n"\
+                        " > Imperial Soldier : What in the Eight Divines is this thing?!\n"\
+                        " > Imperial Soldier : How in Oblivion do we kill this thing?!\n"\
+                        " > Imperial Soldier : It's still coming!\n"\
+                        " > Imperial Soldier : By Ysmir! Nothing kills it!\n\n"\
+                        "-> You witness an Imperial soldier struck by a falling meteor, meeting a swift death.\n\n"\
+                        " > Imperial Soldier : Yeargh!\n\n"\
+                        "-> You and Ralof enter the watchtower, where several Stormcloak soldiers, along with Ulfric Stormcloak, are taking shelter.\n"\
+                        "-> Ralof closes the door behind you.\n\n"\
+                        " > Ralof : Jarl Ulfric! What is that thing?\n"\
+                        " > Ralof : Could the legends be true?\n"\
+                        " > Ulfric Stormcloak : Legends dont burn down villages.\n\n"\
+                        "-> A thunderous explosion erupts outside, shaking the watchtower.\n\n"\
+                        " > Ulfric Stormcloak : We need to move. Now!\n"\
+                        " > Ralof : Up through the tower, let's go!\n"\
+                    
+            for i in dialogue:
+                sys.stdout.write(i)
+                sys.stdout.flush()
+                time.sleep(read_speed)
             
-    for i in dialogue:
-        sys.stdout.write(i)
-        sys.stdout.flush()
-        time.sleep(read_speed)
-        
+            break
+            
     print("\n", separator, "\n")
-    
     print("You may:")
     print("( |  [1] Follow Ralof up the tower  | )") # progress the story
     print("( |  [2] Listen in on the wounded Stormcloak Soldiers  | )") # extra optional dialogue
@@ -1206,8 +1216,10 @@ def escape_from_helgen_1():
                         "-> The dragon bashes through the wall next to the staircase, killing the Stormcloak Soldier in the process.\n\n"\
                         " > Black Dragon : Yol... Toor... Shul!\n\n"\
                         "-> The dragon unleashes a torrent of fire, engulfing the entire room and incinerating any potential survivors before departing.\n"\
-                        "-> You and Ralof take cover on the stairs, narrowly avoiding the dragon's fiery assault.\n"
-                        
+                        "-> You and Ralof take cover on the stairs, narrowly avoiding the dragon's fiery assault.\n"\
+                        "-> The dragon surveys the room, finds nothing, and flies away.\n"\
+                        "-> You and Ralof proceed into the room.\n"\
+                             
             for i in dialogue:
                 sys.stdout.write(i)
                 sys.stdout.flush()
@@ -1228,8 +1240,8 @@ def escape_from_helgen_1():
                 sys.stdout.flush()
                 time.sleep(read_speed)
             
-            print("\n", separator, "\n")
-    
+            print("\n", separator)
+            
     print("\n", separator, "\n")
     print("You may:")
     print("( | [1] Look around | )")    
@@ -1237,26 +1249,101 @@ def escape_from_helgen_1():
     while True:
         user_choice = input("\nEnter your choice: ")
         
-        print("\n", separator, "\n")
+        if user_choice == "1":
+            print("\n", separator, "\n")
+            dialogue =  "-> You peer through the opening left by the dragon.\n" \
+                        "-> You notice a hole in the roof of the inn next to the watchtower.\n\n"\
+                        " > Ralof : See the inn on the other side?\n"\
+                        " > Ralof : Jump through the roof and keep going! Go! We'll follow when we can!\n"\
+                            
+            for i in dialogue:
+                sys.stdout.write(i)
+                sys.stdout.flush()
+                time.sleep(read_speed)
+            
+            break
+                 
+    print("\n", separator, "\n")
+    print("You may:")
+    print("( | [1] Jump through the opening | )") 
+    
+    while True:
+        user_choice = input("\nEnter your choice: ")
         
         if user_choice == "1":
-            dialogue =  "-> asdasd.\n" \
+            print("\n", separator, "\n")
+            dialogue =  "-> You land on the second floor of the inn.\n" \
+                            
+            for i in dialogue:
+                sys.stdout.write(i)
+                sys.stdout.flush()
+                time.sleep(read_speed)
             
-        for i in dialogue:
-            sys.stdout.write(i)
-            sys.stdout.flush()
-            time.sleep(read_speed)
+            break
+    
+    print("\n", separator, "\n")
+    print("You may:")
+    print("( | [1] Look around | )")         
+                       
+    while True:
+        user_choice = input("\nEnter your choice: ")
+        if user_choice == "1":
+            print("\n", separator, "\n")
+            dialogue =  "-> You discover two bottles of juniper berry mead on the tables.\n" \
+                        "-> The stairs to the inn’s first floor have been destroyed by fire.\n"\
+                        "-> Part of the floor has been burned away, creating a hole.\n"\
+                            
+            for i in dialogue:
+                sys.stdout.write(i)
+                sys.stdout.flush()
+                time.sleep(read_speed)
+        
+            break     
+
+    print("\n", separator, "\n")
+    print("You may:")
+    print("( | [1] Jump down the opening and exit out of the inn | )") 
+    print("( | [2] Take the mead | )")   
+    
+    while True:
+        user_choice = input("\nEnter your choice: ")
+        
+        if user_choice == "1":
+            print("\n", separator, "\n")
+            dialogue =  "-> You discover two bottles of juniper berry mead on the tables.\n" \
+                        "-> The stairs to the inn’s first floor have been destroyed by fire.\n"\
+                        "-> Part of the floor has been burned away, creating a hole.\n"\
+                            
+            for i in dialogue:
+                sys.stdout.write(i)
+                sys.stdout.flush()
+                time.sleep(read_speed)
+        
+            break     
+        
+        elif user_choice == "2":
+            print("\n", separator, "\n")
+            dialogue =  "-> You take two bottles of mead.\n" \
+                            
+            for i in dialogue:
+                sys.stdout.write(i)
+                sys.stdout.flush()
+                time.sleep(read_speed)
+                
+            player_inventory.append(consumable['alcohol']['juniper_mead'])
+            
+                              
                        
 # program launch into main menu
 #opening_scene_p1()
 #opening_scene_p2()
 #execution_scene()
 #alduin_helgen_attack()
-escape_from_helgen_1()
+#escape_from_helgen_1()
 
 #display_status()
 #action_screen()
-#character_creation()
+character_creation()
 
 #main_menu_visual()
 #main_menu_function()
