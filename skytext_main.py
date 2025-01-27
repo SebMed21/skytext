@@ -59,14 +59,17 @@ body = {}
 gloves = {}
 boots = {}
 magic  = {}
+
 consumable = { 
     
     'alcohol' : {
         
         'juniper_mead' : {
             
-            'description' : 'nord mead with juniper berries mixed in'
-            'sta_restore'
+            'description' : 'nord mead with juniper berries mixed in',
+            'hp_restore'  : 0,
+            'sta_restore' : 20,
+            'mp_restore'  : 0,
             
         }
         
@@ -80,7 +83,7 @@ races = {
         'race_man' : { 
             
             'nord': { 
-                    'health': 100, 
+                    'health' : 100, 
                     'stamina': 100, 
                     'magicka': 100, 
                     'ability': ['Battle Cry', 'Cold Resistance'] 
@@ -88,7 +91,7 @@ races = {
                     }, 
             
             'imperial': { 
-                    'health': 100, 
+                    'health' : 100, 
                     'stamina': 100, 
                     'magicka': 100, 
                     'ability': ['Voice of the Emperor', 'Gold Boost'] 
@@ -96,7 +99,7 @@ races = {
                     }, 
             
             'breton': { 
-                    'health': 100, 
+                    'health' : 100, 
                     'stamina': 100, 
                     'magicka': 100, 
                     'ability': ['Dragon Skin', 'Magicka Resistance'] 
@@ -104,7 +107,7 @@ races = {
                     }, 
             
             'redguard': { 
-                    'health': 100, 
+                    'health' : 100, 
                     'stamina': 100, 
                     'magicka': 100, 
                     'ability': ['Adrenaline Rush', 'Poison Resistance'] 
@@ -116,7 +119,7 @@ races = {
         'race_mer': { 
             
                     'altmer': { 
-                        'health': 100, 
+                        'health' : 100, 
                         'stamina': 100, 
                         'magicka': 100, 
                         'ability': ['Highborn', 'Magicka Boost'] 
@@ -124,7 +127,7 @@ races = {
                     }, 
                     
                     'dunmer': { 
-                        'health': 100, 
+                        'health' : 100, 
                         'stamina': 100, 
                         'magicka': 100,
                         'ability': ['Ancestor’s Wrath', 'Fire Resistance'] 
@@ -132,7 +135,7 @@ races = {
                     },
                      
                     'bosmer': { 
-                        'health': 100, 
+                        'health' : 100, 
                         'stamina': 100, 
                         'magicka': 100, 
                         'ability': ['Command Animal', 'Disease Resistance'] 
@@ -140,7 +143,7 @@ races = {
                     }, 
                     
                     'orsimer': { 
-                        'health': 100, 
+                        'health' : 100, 
                         'stamina': 100, 
                         'magicka': 100, 
                         'ability': ['Berserker Rage', 'Heavy Armor Boost'] 
@@ -152,12 +155,13 @@ races = {
         'race_beast': { 
             
                     'argonian': { 
-                        'health': 100, 
+                        'health' : 100, 
                         'stamina': 100, 
                         'magicka': 100, 
                         'ability': ['Histskin', 'Water Breathing'] }, 
+                    
                     'kahjiit': { 
-                        'health': 100, 
+                        'health' : 100, 
                         'stamina': 100, 
                         'magicka': 100, 
                         'ability': ['Night Eye', 'Claw Attacks'] } 
@@ -390,7 +394,7 @@ def character_creation():
             print("\nAre you sure? ( | [1] Y̲E̲S̲ | [2] N̲O̲ | )   *you cannot change this later*")
             user_choice = input("\nEnter your choice: ")
 
-            if user_choice == "1":
+            if user_choice == "1": # this sets the chosen stats/race/abilities to the player
                 player_stats['player_max_hp'] = races['race_man']['nord']['health']
                 player_stats['player_max_sta'] = races['race_man']['nord']['stamina']
                 player_stats['player_max_mp'] = races['race_man']['nord']['magicka']
@@ -405,7 +409,7 @@ def character_creation():
             print("\nAre you sure? ( | [1] Y̲E̲S̲ | [2] N̲O̲ | )   *you cannot change this later*")
             user_choice = input("\nEnter your choice: ")
 
-            if user_choice == "1":
+            if user_choice == "1": # this sets the chosen stats/race/abilities to the player
                 player_stats['player_max_hp'] = races['race_man']['imperial']['health']
                 player_stats['player_max_sta'] = races['race_man']['imperial']['stamina']
                 player_stats['player_max_mp'] = races['race_man']['imperial']['magicka']
@@ -420,7 +424,7 @@ def character_creation():
             print("\nAre you sure? ( | [1] Y̲E̲S̲ | [2] N̲O̲ | )   *you cannot change this later*")
             user_choice = input("\nEnter your choice: ")
 
-            if user_choice == "1":
+            if user_choice == "1": # this sets the chosen stats/race/abilities to the player
                 player_stats['player_max_hp'] = races['race_man']['breton']['health']
                 player_stats['player_max_sta'] = races['race_man']['breton']['stamina']
                 player_stats['player_max_mp'] = races['race_man']['breton']['magicka']
@@ -436,7 +440,7 @@ def character_creation():
             
             user_choice = input("\nEnter your choice: ")
 
-            if user_choice == "1":
+            if user_choice == "1": # this sets the chosen stats/race/abilities to the player
                 player_stats['player_max_hp'] = races['race_man']['redguard']['health']
                 player_stats['player_max_sta'] = races['race_man']['redguard']['stamina']
                 player_stats['player_max_mp'] = races['race_man']['redguard']['magicka']
@@ -452,7 +456,7 @@ def character_creation():
             
             user_choice = input("\nEnter your choice: ")
 
-            if user_choice == "1":
+            if user_choice == "1": # this sets the chosen stats/race/abilities to the player
                 player_stats['player_max_hp'] = races['race_mer']['altmer']['health']
                 player_stats['player_max_sta'] = races['race_mer']['altmer']['stamina']
                 player_stats['player_max_mp'] = races['race_mer']['altmer']['magicka']
@@ -468,7 +472,7 @@ def character_creation():
             
             user_choice = input("\nEnter your choice: ")
 
-            if user_choice == "1":
+            if user_choice == "1": # this sets the chosen stats/race/abilities to the player
                 player_stats['player_max_hp'] = races['race_mer']['dunmer']['health']
                 player_stats['player_max_sta'] = races['race_mer']['dunmer']['stamina']
                 player_stats['player_max_mp'] = races['race_mer']['dunmer']['magicka']
@@ -484,7 +488,7 @@ def character_creation():
             
             user_choice = input("\nEnter your choice: ")
 
-            if user_choice == "1":
+            if user_choice == "1": # this sets the chosen stats/race/abilities to the player
                 player_stats['player_max_hp'] = races['race_mer']['bosmer']['health']
                 player_stats['player_max_sta'] = races['race_mer']['bosmer']['stamina']
                 player_stats['player_max_mp'] = races['race_mer']['bosmer']['magicka']
@@ -497,7 +501,7 @@ def character_creation():
             
             user_choice = input("\nEnter your choice: ")
 
-            if user_choice == "1":
+            if user_choice == "1": # this sets the chosen stats/race/abilities to the player
                 player_stats['player_max_hp'] = races['race_mer']['orsimer']['health']
                 player_stats['player_max_sta'] = races['race_mer']['orsimer']['stamina']
                 player_stats['player_max_mp'] = races['race_mer']['orsimer']['magicka']
@@ -513,7 +517,7 @@ def character_creation():
             
             user_choice = input("\nEnter your choice: ")
 
-            if user_choice == "1":
+            if user_choice == "1": # this sets the chosen stats/race/abilities to the player
                 player_stats['player_max_hp'] = races['race_beast']['argonian']['health']
                 player_stats['player_max_sta'] = races['race_beast']['argonian']['stamina']
                 player_stats['player_max_mp'] = races['race_beast']['argonian']['magicka']
@@ -529,7 +533,7 @@ def character_creation():
             
             user_choice = input("Enter your choice: ")
 
-            if user_choice == "1":
+            if user_choice == "1": # this sets the chosen stats/race/abilities to the player
                 player_stats['player_max_hp'] = races['race_beast']['kahjiit']['health']
                 player_stats['player_max_sta'] = races['race_beast']['kahjiit']['stamina']
                 player_stats['player_max_mp'] = races['race_beast']['kahjiit']['magicka']
@@ -539,6 +543,11 @@ def character_creation():
             
             elif user_choice == "2":
                 continue
+        
+        # this sets the chosen HP STA and MP to the player to ensure the player does not spawn with 0 life
+        player_stats["player_current_hp"] = player_stats["player_max_hp"]
+        player_stats["player_current_sta"] = player_stats["player_max_sta"]    
+        player_stats["player_current_mp"] = player_stats["player_max_mp"]
 
     print("\n", separator, "\n")
     print("                                           ( |  CHARACTER NAME  | )")
@@ -627,9 +636,9 @@ def display_status():
     
     print(player_stats['player_name'])
     
-    print("HP:", player_stats['player_current_health'],"/", player_stats['player_max_health'], 
-          "| MP:", player_stats['player_current_magicka'],"/", player_stats['player_max_magicka'], 
-          "| STA:", player_stats['player_current_stamina'],"/", player_stats['player_max_stamina'])
+    print("HP:", player_stats['player_current_hp'],"/", player_stats['player_max_hp'], 
+          "| MP:", player_stats['player_current_mp'],"/", player_stats['player_max_mp'], 
+          "| STA:", player_stats['player_current_sta'],"/", player_stats['player_max_sta'])
     
     print("EXP: ", player_stats['player_experience'], "/ 100",
           "| LVL: ", player_stats['player_level'])
@@ -657,8 +666,28 @@ def add_to_inventory(item_dict, item_type, item_name, quantity):
     else:
         print(f"{item_name} is invalid")
     
-def consume_item():
-    print("item has been consumed")
+def consume_item(item_type, item_name):
+    
+    if  item_type in player_inventory and item_name in player_inventory[item_type]: # checks if item is in inventory
+        if player_inventory[item_type][item_name] > 0: # checks amount of item the player has
+            
+            player_inventory[item_type][item_name] -= 1 # subtracts the amount used
+            
+            hp_restore = consumable[item_type][item_name]['hp_restore']
+            sta_restore = consumable[item_type][item_name]['sta_restore']
+            mp_restore = consumable[item_type][item_name]['mp_restore']
+            
+            player_stats['player_current_hp'] = min(player_stats['player_current_hp'] + hp_restore, player_stats['player_max_hp'])
+            player_stats['player_current_hp'] = min(player_stats['player_current_sta'] + sta_restore, player_stats['player_max_sta'])
+            player_stats['player_current_mp'] = min(player_stats['player_current_mp'] + mp_restore, player_stats['player_max_mp'])
+            
+            print(f"{item_name} consumed.") # prints out which item is consumed
+    
+        else:
+            print(f"No {item_name} left in inventory.") # if the user ran out of items to be consumed
+            
+    else: 
+        print(f"{item_name} is not in inventory.")
     
 
 # !!! Gameplay !!!
@@ -1363,18 +1392,23 @@ def escape_from_helgen_1():
             add_to_inventory(consumable, 'alcohol', 'juniper_mead', 2)
             print(player_inventory)
             
-                              
-                       
+            break
+            
+    consume_item('alcohol', 'juniper_mead')
+    
+    display_status()
+    
 # program launch into main menu
 #opening_scene_p1()
 #opening_scene_p2()
 #execution_scene()
 #alduin_helgen_attack()
-escape_from_helgen_1()
+#escape_from_helgen_1()
+# testing()
 
 #display_status()
 #action_screen()
-##character_creation()
+character_creation()
 
 #main_menu_visual()
 #main_menu_function()
